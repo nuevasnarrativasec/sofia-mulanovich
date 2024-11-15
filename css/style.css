@@ -231,8 +231,7 @@ p.ctn-texto{
             max-width: 300px;
             padding: 75px 0 0 200px;
         }
-            .box-iframe iframe{
-                border: 10px solid #26A9E0;
+            .box-iframe video{
                 box-sizing: border-box; 
                 width: 100%;
             }

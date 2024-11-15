@@ -119,9 +119,14 @@
                 <img src="./img/sofia-2004.webp" alt="" width="100%" class="sofia-2004">
                 <div class="box-contenido">
                     <div class="box-iframe">
-                        <div style="position:relative;overflow:hidden;padding-bottom:177.78%">
-                            <iframe id="iframe1" data-manage-visibility src="https://cdn.jwplayer.com/players/2DfYVa3r-sfGpVx0W.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Melisa Evanan " style="position:absolute;" allowfullscreen></iframe>
-                        </div>
+                        <video 
+                            id="video1"
+                            data-manage-visibility
+                            controls
+                            preload="metadata">
+                            <source src="./video/video-1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
                     </div>
                     
                 </div>
@@ -279,28 +284,28 @@
 
     <!-- pausa video iframe -->
     <script>
-        // Clase para manejar la visibilidad de los iframes
-        class IframeManager {
-            constructor(selector = 'iframe[data-manage-visibility]') {
+        // Clase para manejar la visibilidad de los videos
+        class VideoManager {
+            constructor(selector = 'video[data-manage-visibility]') {
                 this.selector = selector;
                 this.observers = new Map();
                 this.init();
             }
 
             init() {
-                // Inicializar todos los iframes existentes
-                const iframes = document.querySelectorAll(this.selector);
-                iframes.forEach(iframe => this.setupIframe(iframe));
+                // Inicializar todos los videos existentes
+                const videos = document.querySelectorAll(this.selector);
+                videos.forEach(video => this.setupVideo(video));
 
-                // Observar cambios en el DOM para nuevos iframes
+                // Observar cambios en el DOM para nuevos videos
                 this.setupMutationObserver();
 
                 // Manejar resize de ventana
                 this.setupResizeHandler();
             }
 
-            setupIframe(iframe) {
-                const container = iframe.closest('.box-horizontal');
+            setupVideo(video) {
+                const container = video.closest('.box-horizontal');
                 
                 // Configuración del IntersectionObserver
                 const options = {
@@ -309,32 +314,43 @@
                     threshold: [0.3],
                 };
 
-                // Crear y guardar el observer para este iframe específico
+                // Crear y guardar el observer para este video específico
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (!entry.isIntersecting) {
-                            this.pauseIframeContent(iframe);
-                            console.log(`Iframe ${iframe.id || 'sin ID'} fuera de vista - contenido pausado`);
-                        } else {
-                            this.resumeIframeContent(iframe);
-                            console.log(`Iframe ${iframe.id || 'sin ID'} visible - contenido resumido`);
+                            this.pauseVideo(video);
+                            console.log(`Video ${video.id || 'sin ID'} fuera de vista - pausado`);
+                        } else if (!video.ended && !video.error) {
+                            // Solo reanudar si el video no ha terminado y no tiene errores
+                            this.resumeVideo(video);
+                            console.log(`Video ${video.id || 'sin ID'} visible - reanudado`);
                         }
                     });
                 }, options);
 
                 // Guardar el observer en el Map
-                this.observers.set(iframe, observer);
-                observer.observe(iframe);
+                this.observers.set(video, observer);
+                observer.observe(video);
 
                 // Configurar scroll horizontal si existe el contenedor
                 if (container) {
-                    this.setupHorizontalScroll(iframe, container);
+                    this.setupHorizontalScroll(video, container);
                 }
+
+                // Manejar el caso cuando el video termina
+                video.addEventListener('ended', () => {
+                    console.log(`Video ${video.id || 'sin ID'} terminado`);
+                });
+
+                // Manejar errores del video
+                video.addEventListener('error', () => {
+                    console.error(`Error en video ${video.id || 'sin ID'}:`, video.error);
+                });
             }
 
-            setupHorizontalScroll(iframe, container) {
+            setupHorizontalScroll(video, container) {
                 const scrollHandler = () => {
-                    const rect = iframe.getBoundingClientRect();
+                    const rect = video.getBoundingClientRect();
                     const containerRect = container.getBoundingClientRect();
                     
                     const isOutOfHorizontalView = 
@@ -342,18 +358,18 @@
                         rect.right < containerRect.left;
 
                     if (isOutOfHorizontalView) {
-                        this.pauseIframeContent(iframe);
-                        console.log(`Iframe ${iframe.id || 'sin ID'} fuera de vista horizontal - contenido pausado`);
-                    } else if (document.contains(iframe)) {
-                        this.resumeIframeContent(iframe);
-                        console.log(`Iframe ${iframe.id || 'sin ID'} dentro de vista horizontal - contenido resumido`);
+                        this.pauseVideo(video);
+                        console.log(`Video ${video.id || 'sin ID'} fuera de vista horizontal - pausado`);
+                    } else if (document.contains(video) && !video.ended && !video.error) {
+                        this.resumeVideo(video);
+                        console.log(`Video ${video.id || 'sin ID'} dentro de vista horizontal - reanudado`);
                     }
                 };
 
                 container.addEventListener('scroll', scrollHandler, { passive: true });
                 
                 // Guardar el handler para poder removerlo si es necesario
-                iframe.dataset.scrollHandler = scrollHandler;
+                video.dataset.scrollHandler = scrollHandler;
             }
 
             setupMutationObserver() {
@@ -361,13 +377,13 @@
                     mutations.forEach(mutation => {
                         mutation.addedNodes.forEach(node => {
                             if (node.nodeType === 1 && node.matches?.(this.selector)) {
-                                this.setupIframe(node);
+                                this.setupVideo(node);
                             }
                         });
                         
                         mutation.removedNodes.forEach(node => {
                             if (node.nodeType === 1 && node.matches?.(this.selector)) {
-                                this.cleanupIframe(node);
+                                this.cleanupVideo(node);
                             }
                         });
                     });
@@ -384,58 +400,59 @@
                 window.addEventListener('resize', () => {
                     clearTimeout(resizeTimeout);
                     resizeTimeout = setTimeout(() => {
-                        document.querySelectorAll(this.selector).forEach(iframe => {
-                            if (document.contains(iframe)) {
-                                this.observers.get(iframe)?.disconnect();
-                                this.setupIframe(iframe);
+                        document.querySelectorAll(this.selector).forEach(video => {
+                            if (document.contains(video)) {
+                                this.observers.get(video)?.disconnect();
+                                this.setupVideo(video);
                             }
                         });
                     }, 250);
                 }, { passive: true });
             }
 
-            pauseIframeContent(iframe) {
+            pauseVideo(video) {
                 try {
-                    if (!iframe.dataset.originalSrc && iframe.src !== 'about:blank') {
-                        iframe.dataset.originalSrc = iframe.src;
-                    }
-
-                    if (iframe.src.includes('youtube.com')) {
-                        iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-                    }
-                    
-                    if (iframe.src !== 'about:blank' && !iframe.src.includes('youtube.com')) {
-                        iframe.src = 'about:blank';
+                    if (!video.paused) {
+                        video.pause();
                     }
                 } catch (error) {
-                    console.error(`Error al pausar iframe ${iframe.id || 'sin ID'}:`, error);
+                    console.error(`Error al pausar video ${video.id || 'sin ID'}:`, error);
                 }
             }
 
-            resumeIframeContent(iframe) {
+            resumeVideo(video) {
                 try {
-                    if (iframe.dataset.originalSrc && iframe.src === 'about:blank') {
-                        iframe.src = iframe.dataset.originalSrc;
+                    if (video.paused && !video.ended && video.readyState >= 2) {
+                        // Solo reproducir si está pausado, no ha terminado y tiene suficientes datos
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.warn(`No se pudo reproducir el video ${video.id || 'sin ID'}:`, error);
+                            });
+                        }
                     }
                 } catch (error) {
-                    console.error(`Error al reanudar iframe ${iframe.id || 'sin ID'}:`, error);
+                    console.error(`Error al reanudar video ${video.id || 'sin ID'}:`, error);
                 }
             }
 
-            cleanupIframe(iframe) {
+            cleanupVideo(video) {
+                // Pausar el video
+                this.pauseVideo(video);
+                
                 // Limpiar el observer
-                const observer = this.observers.get(iframe);
+                const observer = this.observers.get(video);
                 if (observer) {
                     observer.disconnect();
-                    this.observers.delete(iframe);
+                    this.observers.delete(video);
                 }
             }
         }
 
         // Inicializar cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', () => {
-            // Crear instancia del manejador de iframes
-            window.iframeManager = new IframeManager();
+            // Crear instancia del manejador de videos
+            window.videoManager = new VideoManager();
         });
 
     </script>
