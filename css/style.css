@@ -32,6 +32,11 @@ html {
          url('https://nuevasnarrativasec.github.io/tablas-de-sarhua/fonts/prelo-bold-webfont.woff') format('woff');
 }
 @font-face {
+    font-family: 'prelobold_italic';    
+    src: url('../fonts/Prelo-Bold Italic-webfont.woff2') format('woff2'),
+         url('../fonts/Prelo-Bold Italic-webfont.woff') format('woff');
+}
+@font-face {
     font-family: 'preloblack';
     src: url('../fonts/Prelo-Black-webfont.woff2') format('woff2'),
          url('../fonts/Prelo-Black-webfont.woff') format('woff');       
@@ -219,30 +224,86 @@ p.ctn-texto{
     width: 100%;
 }
     .ctn-box-horizontal{
+        scroll-behavior: smooth; 
+        overflow-x: auto;       
         overflow-y: hidden;          
     }
     .box-contenido{
         background: rgb(255,255,255);
         background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%);
-        height: 100%;
+        height: 700px;
         margin-left: 1200px;
     }
+        .box-intro{
+            display: inline-block;
+            max-width: 360px;
+            height: 80vh;
+            padding: 50px 0 0 150px;
+        }
+            .box-intro h5{
+                color: #26A9E0;
+                font: 42px/1 'Broken Family';
+                margin: 0 auto 10px;
+            }
+            .box-intro p{
+                color: #26A9E0;
+                font: 22px/1.3 'prelobold_italic';    
+                margin: 0 auto 20px;
+            }
         .box-iframe{                     
             max-width: 300px;
-            padding: 75px 0 0 200px;
+            padding: 0;
+            position: relative;
         }
             .box-iframe video{
                 box-sizing: border-box; 
+                /*filter: brightness(1.3);*/
+                position: relative;
                 width: 100%;
             }
-    #box-horizontal-3{
+            .box-iframe img{
+                max-width: 100px;
+                position: absolute;
+                right: -40px;
+                top: -60px;
+                z-index: 10;
+            }
+        .box-bloque{
+            box-sizing: border-box;
+            display: inline-block;
+            height: 85vh;
+            vertical-align: top;
+        }
+            .box-bloque h6{
+                color: #26A9E0;
+                font: 24px/1.3 'prelobold_italic';  
+                margin: 0 auto 10px;  
+            }
+            .box-bloque p{
+                font: 17px/1.4 'prelobook';
+                margin: 10px auto;
+            }
+                .box-bloque p b{
+                    font-family: 'prelobold';
+                }
+        #iframe1{
+            margin: 35px;
+        }
+        #video1{
+            transform: rotate(-3deg);
+        }
+        #video2{
+            filter: brightness(1.1);
+        }
+    #box-horizontal-2004{
         
     }
-        #box-horizontal-3 .ctn-box-horizontal{
-            background: url('../img/bg-arena.webp') repeat-x;
-            background-size: cover;
+        #box-horizontal-2004 .ctn-box-horizontal{
+            background: url('../img/bg-arena-2004.jpg') repeat-x;
+            background-size: contain;
             height: 100%;
-            width: 4500px;
+            position: relative;
+            width: 7800px;
         }
         .mar{
             left: -100%;
@@ -250,6 +311,9 @@ p.ctn-texto{
             position: absolute;
             pointer-events: none;
         }
+            .mar-2004{
+                max-width: 1300px;
+            }
             .enterMar {
                 animation: waveEntry 2s ease-out forwards, waveSway 3s ease-in-out infinite;
             }
@@ -309,7 +373,7 @@ p.ctn-texto{
                     bottom: -100%;
                 }
             }
-        #box-horizontal-3 .box-ctn-titular{
+        #box-horizontal-2004 .box-ctn-titular{
             left: 0;
             max-width: 400px;                
             position: absolute; 
@@ -317,23 +381,65 @@ p.ctn-texto{
             z-index: 10;
             transform: translate(20%, -50%);                
         }
-            #box-horizontal-3 .box-ctn-titular h3{
+            #box-horizontal-2004 .box-ctn-titular h3{
                 color: #fff;
                 font: 70px/0.8 'Broken Family';
                 margin: 0 auto;
             }
-            #box-horizontal-3 .box-ctn-titular img{
+            #box-horizontal-2004 .box-ctn-titular img{
                 border-bottom: 1px solid #000;
                 border-top: 1px solid #000;
-                margin: 20px 0;
+                margin: 30px 0;
                 max-width: 250px;
                 padding: 15px 0;
             }
-            #box-horizontal-3 .box-ctn-titular h4{
+            #box-horizontal-2004 .box-ctn-titular h4{
                 color: #fff;
                 font: 100px/0.8 'Broken Family';
                 margin: 0 auto;
             }
+            img.bg-grande-2004{
+                display: inline-block;
+                margin: 0 100px;
+                max-width: 955px;
+                pointer-events: none;
+                vertical-align: top;
+            }
+            img.bg-grande-2004-2{
+                display: inline-block;
+                margin: 0 100px;
+                max-width: 475px;
+                pointer-events: none;
+                vertical-align: top;
+            }
+            .separador{
+                background: #26A9E0;
+                display: inline-block;
+                height: 100%;
+                margin: 0 40px 0 90px;
+                vertical-align: top;
+                width: 1px;
+            }
+        .box-menu-interior{
+            display: inline-block;
+            vertical-align: top;
+        }
+            .box-menu-interior .box-indicacion-menu{
+                text-align: left;
+            }
+            .box-menu-interior ul{
+                list-style: none;
+                padding: 0;
+            }
+                .box-menu-interior ul li{
+                    max-width: 240px;
+                }
+                    .box-menu-interior ul li img{
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                        max-width: 100%;
+                        width: 100%;
+                    }
         
             
 

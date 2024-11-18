@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v1">
+    <link rel="stylesheet" href="./css/style.css?v3">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -59,7 +59,7 @@
             <div class="btn-intro">
                 <p>sumérgete con sofi</p>
             </div>
-            <video id="portada" src="./video/portada.mp4" width="100%" muted autoplay loop playsinline></video>
+            <video id="portada" src="./video/portada-desktop.mp4" width="100%" muted autoplay loop playsinline></video>
             <video id="portada-movil" src="./video/portada-movil.mp4" width="100%" muted autoplay loop playsinline></video>
         </div>       
 
@@ -70,9 +70,9 @@
             </p>
         </div>    
 
-        <p class="ctn-texto">
+        <!--<p class="ctn-texto">
             Lorem ipsum dolor sit amet consectetur adipiscing elit tincidunt lacus, magna mauris sociis Lorem ipsum dolor sit amet consectetur adipiscing elit tincidunt lacus, magna mauris sociis augue non mi senectus dictum, in ridiculus rutrum vitae varius eleifend egestas vivamus. <span>Nisl nceptos facilisis odio conubia.</span>i
-        </p>
+        </p>-->
 
         <div class="box-menu">
             <div class="box-indicacion-menu">
@@ -80,27 +80,27 @@
                 <p>Selecciona una Sofi</p>
             </div>
             <ul>
-                <li>
+                <li id="btn-2024">
                     <img class="bg-menu-desktop" src="./img/bg-menu-1.webp" alt="" width="100%">
                     <img class="bg-menu-movil" src="./img/bg-menu-1-movil.webp" alt="" width="100%">
                     <p>2024</p>
                 </li>
-                <li>
-                    <img class="bg-menu-desktop" src="./img/bg-menu-2.webp" alt="" width="100%">
-                    <img class="bg-menu-movil" src="./img/bg-menu-2-movil.webp" alt="" width="100%">
+                <li id="btn-2020">
+                    <img class="bg-menu-desktop" src="./img/bg-menu-2.jpg" alt="" width="100%">
+                    <img class="bg-menu-movil" src="./img/bg-menu-2-movil.jpg" alt="" width="100%">
                     <p>2020</p>
                 </li>
-                <li>
+                <li id="btn-2004">
                     <img class="bg-menu-desktop" src="./img/bg-menu-3.webp" alt="" width="100%">
                     <img class="bg-menu-movil" src="./img/bg-menu-3-movil.webp" alt="" width="100%">
                     <p>2004</p>
                 </li>
-                <li>
+                <li id="btn-1997">
                     <img class="bg-menu-desktop" src="./img/bg-menu-4.webp" alt="" width="100%">
                     <img class="bg-menu-movil" src="./img/bg-menu-4-movil.webp" alt="" width="100%">
                     <p>1997</p>
                 </li>
-                <li>
+                <li id="btn-1992">
                     <img class="bg-menu-desktop" src="./img/bg-menu-5.webp" alt="" width="100%">
                     <img class="bg-menu-movil" src="./img/bg-menu-5-movil.webp" alt="" width="100%">
                     <p>1992</p>
@@ -108,29 +108,142 @@
             </ul>
         </div>
 
-        <div class="box-horizontal scrollable" id="box-horizontal-3">
+        <div class="box-horizontal scrollable" id="box-horizontal-2024">
+            <p>test 2024</p>
+        </div>
+
+        <div class="box-horizontal scrollable" id="box-horizontal-2020">
+            <p>test 2020</p>
+        </div>
+
+        <div class="box-horizontal scrollable" id="box-horizontal-2004">
             <div class="ctn-box-horizontal">
+                <div class="ancla"></div>
                 <div class="box-ctn-titular">
-                    <h3>sofía campeona mundial por primera vez</h3>
+                    <h3>reina y campeona</h3>
                     <img src="./img/icon-deslizar.png" alt="" width="100%">
                     <h4>2004</h4>
                 </div>
-                <img src="./img/bg-mar.webp" alt="" width="100%" class="mar">
+                <img src="./img/bg-mar-2004.webp" alt="" width="100%" class="mar mar-2004">
                 <img src="./img/sofia-2004.webp" alt="" width="100%" class="sofia-2004">
                 <div class="box-contenido">
-                    <div class="box-iframe">
-                        <video 
-                            id="video1"
-                            data-manage-visibility
-                            controls
-                            preload="metadata">
-                            <source src="./video/video-1.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento video.
-                        </video>
+                    <div class="box-intro">
+                        <h5>el título mundial</h5>
+                        <p>"Me despertaba cada día pensando que sería el día más importante de mi vida, y no lo era".</p>
+                        <div class="box-iframe" id="iframe1">
+                            <img src="./img/estrella.png" alt="" width="100%" class="">
+                            <video 
+                                id="video1"
+                                data-manage-visibility
+                                controls
+                                preload="metadata">
+                                <source src="./video/2004/clip-1-1-pre.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>                    
                     </div>
-                    
+                    <div class="box-bloque">
+                        <h6 style="margin: 0; max-width: 355px; padding: 180px 0 0 180px;">"Escuchaba una canción que decía que las oportunidades era una vez en la vida".</h6>
+                        <p style="max-width: 355px; padding-left: 180px;">Fueron doce días de tensa espera en Hawái para Sofía y el Perú para definir su título. En todos esos días ni siquiera podía meterse al mar por seguridad, así que el tenis y la buena comida fueron sus distracciones.</p>
+                    </div>
+                    <div class="box-bloque">
+                        <div class="box-iframe" id="iframe2" style="margin: 50px 100px;">                            
+                            <video 
+                                id="video2"
+                                data-manage-visibility
+                                controls
+                                preload="metadata">
+                                <source src="./video/2004/clip-2-2-pre.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>   
+                        <h6 style="margin-top: 35px; max-width: 355px;">“Al día siguiente me desperté y vi la Copa a mi costado y dije “¡Wow! ¿Qué hace esto acá?” Estaba como en shock.”</h6>     
+                    </div>
+                    <div class="box-bloque">
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 120px 0 0 80px;">
+                            <b>Superó la primera ronda sobre la hora, en la última ola, y con llegar a la final, se consagró campeona.</b> Con 21 años, era en ese momento la más joven el lograrlo, además de ser la primera latina en llegar a lo más alto.
+                        </p>
+                        <p style="margin: 0; max-width: 350px; padding: 0 0 0 80px;">
+                            Estuvo rodeada de las chicas del circuito, porque sus amigas del colegio que viajaron no pudieron esperar tanto y al octavo día regresaron a Lima. Su familia lo vivió a la distancia: 
+                        </p>
+                    </div>
+                    <div class="box-bloque">
+                        <h6 style="margin-top: 35px; max-width: 400px;">“Preferí las cosas más calmadas, más estar conmigo misma y mis espacios”.</h6>     
+                        <div class="box-iframe" id="iframe3" style="margin: 50px 100px;">                            
+                            <video 
+                                id="video3"
+                                data-manage-visibility
+                                controls
+                                preload="metadata">
+                                <source src="./video/2004/clip-3.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>                           
+                    </div>
+                    <img src="./img/bg-grande-2004.jpg" alt="" width="100%" class="bg-grande-2004">
+                    <div class="box-bloque">
+                        <h6 style="max-width: 400px; padding: 230px 0 0 60px;">“Empecé el año ganando el Mundial ISA en Ecuador y eso me dio mucha confianza. Luego gané mi primer CT en Tavarua (Fiji), en Tahití también lo gané y fue a Francia e hice tres al hilo que me pusieron primera en el ránking”.</h6>
+                    </div>
+                    <div class="box-bloque">                        
+                        <div class="box-iframe" id="iframe4" style="margin: 150px 100px 0;">                            
+                            <video 
+                                id="video4"
+                                data-manage-visibility
+                                controls
+                                preload="metadata">
+                                <source src="./video/2004/clip-4.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>                           
+                    </div>
+                    <div class="box-bloque">
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 230px 0 0 80px;">
+                            <b>Fue el sábado 20 de noviembre del 2024, en Haleiwa (Oahu) </b> en el que de las olas hawaianas salió una reina con la bandera peruana por todo lo alto y ahí estuvo El Comercio con su fotógrafo Renzo Giraldo para no perderse ningún detalle. 
+                        </p>
+                    </div>
+                    <img src="./img/bg-grande-2004-2.webp" alt="" width="100%" class="bg-grande-2004-2">
+                    <div class="box-bloque">
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 160px 0 20px 80px;">
+                            <b>Fue un cierre de año hermoso para el Perú.</b> ‘Maju’ Mantilla había sido elegida Miss Universo, Perú le había ganado a Chile por las Eliminatorias, Ramón Ferreyros destacaba en el Mundial de Rally y Akio Tamashiro ganaba la medalla de plata en el Mundial de Karate.
+                        </p>
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 0 0 0 80px;">
+                            <b>Hoy, el trofeo de campeona adorna la parte más alta del estante de premios.</b> Ahí, junto a una foto de sus pequeños hijos y la portada de la Revista Surfer (junto a Andy Irons, Dane Reynolds y Kelly Slater), la inmensa copa brilla con el nombre Sofía Mulanovich grabado para siempre, en solo en su placa, en la historia misma.
+                        </p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="box-menu-interior">
+                        <div class="box-indicacion-menu">
+                            <img src="./img/icon-mano.png" alt="" width="100%">
+                            <p>Selecciona una Sofi</p>
+                            <ul>
+                                <li id="btn-interior-2024">
+                                    <img class="" src="./img/bg-menu-1-movil.webp" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-2020">
+                                    <img class="" src="./img/bg-menu-2-movil.jpg" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-2004">
+                                    <img class="" src="./img/bg-menu-3-movil.webp" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-1997">
+                                    <img class="" src="./img/bg-menu-4-movil.webp" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-1992">
+                                    <img class="" src="./img/bg-menu-5-movil.webp" alt="" width="100%">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="box-horizontal scrollable" id="box-horizontal-1997">
+            <p>test 1997</p>
+        </div>
+
+        <div class="box-horizontal scrollable" id="box-horizontal-1992">
+            <p>test 1992</p>
         </div>
 
 
@@ -289,6 +402,7 @@
             constructor(selector = 'video[data-manage-visibility]') {
                 this.selector = selector;
                 this.observers = new Map();
+                this.currentlyPlayingVideo = null;
                 this.init();
             }
 
@@ -321,7 +435,7 @@
                             this.pauseVideo(video);
                             console.log(`Video ${video.id || 'sin ID'} fuera de vista - pausado`);
                         } else if (!video.ended && !video.error) {
-                            // Solo reanudar si el video no ha terminado y no tiene errores
+                            // Solo intentar reproducir si no hay otro video reproduciéndose
                             this.resumeVideo(video);
                             console.log(`Video ${video.id || 'sin ID'} visible - reanudado`);
                         }
@@ -340,11 +454,26 @@
                 // Manejar el caso cuando el video termina
                 video.addEventListener('ended', () => {
                     console.log(`Video ${video.id || 'sin ID'} terminado`);
+                    if (this.currentlyPlayingVideo === video) {
+                        this.currentlyPlayingVideo = null;
+                    }
+                });
+
+                // Manejar eventos de reproducción para control de videos simultáneos
+                video.addEventListener('play', () => {
+                    // Si ya hay un video reproduciéndose, pausarlo
+                    if (this.currentlyPlayingVideo && this.currentlyPlayingVideo !== video) {
+                        this.pauseVideo(this.currentlyPlayingVideo);
+                    }
+                    this.currentlyPlayingVideo = video;
                 });
 
                 // Manejar errores del video
                 video.addEventListener('error', () => {
                     console.error(`Error en video ${video.id || 'sin ID'}:`, video.error);
+                    if (this.currentlyPlayingVideo === video) {
+                        this.currentlyPlayingVideo = null;
+                    }
                 });
             }
 
@@ -414,6 +543,9 @@
                 try {
                     if (!video.paused) {
                         video.pause();
+                        if (this.currentlyPlayingVideo === video) {
+                            this.currentlyPlayingVideo = null;
+                        }
                     }
                 } catch (error) {
                     console.error(`Error al pausar video ${video.id || 'sin ID'}:`, error);
@@ -423,17 +555,32 @@
             resumeVideo(video) {
                 try {
                     if (video.paused && !video.ended && video.readyState >= 2) {
-                        // Solo reproducir si está pausado, no ha terminado y tiene suficientes datos
-                        const playPromise = video.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(error => {
-                                console.warn(`No se pudo reproducir el video ${video.id || 'sin ID'}:`, error);
-                            });
+                        // Si no hay ningún video reproduciéndose o este video está en el viewport
+                        if (!this.currentlyPlayingVideo || 
+                            this.isElementInViewport(video)) {
+                            
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.warn(`No se pudo reproducir el video ${video.id || 'sin ID'}:`, error);
+                                });
+                            }
                         }
                     }
                 } catch (error) {
                     console.error(`Error al reanudar video ${video.id || 'sin ID'}:`, error);
                 }
+            }
+
+            // Método para verificar si el elemento está completamente en el viewport
+            isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
             }
 
             cleanupVideo(video) {
@@ -453,6 +600,87 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Crear instancia del manejador de videos
             window.videoManager = new VideoManager();
+        });
+
+    </script>
+
+    <!--menú principal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ocultar todos los box-horizontal al cargar la página
+            const boxes = document.querySelectorAll('[id^="box-horizontal"]');
+            boxes.forEach(box => {
+                box.style.display = 'none';
+            });
+
+            // Asignar eventos a los botones
+            const buttons = document.querySelectorAll('[id^="btn-"]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const year = this.id.split('-')[1]; // Obtener el año del id del botón
+                    const targetBox = document.querySelector(`#box-horizontal-${year}`);
+                    
+                    // Ocultar todos los boxes
+                    boxes.forEach(box => box.style.display = 'none');
+
+                    if (targetBox) {
+                        // Mostrar el box correspondiente
+                        targetBox.style.display = 'block';
+
+                        // Scroll suave hacia el elemento "box-ctn-titular" dentro del targetBox
+                        const targetTitle = targetBox.querySelector('.ancla');
+                        if (targetTitle) {
+                            targetTitle.scrollIntoView({
+                                behavior: 'smooth',
+                                inline: 'start', // Scroll horizontal al inicio del elemento
+                            });
+                            console.log(`Ancla horizontal hacia ${targetTitle.className}`);
+                        }
+                    }
+                });
+            });
+        });
+
+
+
+
+    </script>
+
+    <!-- menú interior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ocultar todos los box-horizontal al cargar la página
+            const boxes = document.querySelectorAll('[id^="box-horizontal"]');
+            boxes.forEach(box => {
+                box.style.display = 'none';
+            });
+
+            // Asignar eventos a los botones con el prefijo "btn-interior-"
+            const buttons = document.querySelectorAll('[id^="btn-interior-"]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const year = this.id.split('-')[2]; // Obtener el año del id del botón
+                    const targetBox = document.querySelector(`#box-horizontal-${year}`);
+                    
+                    // Ocultar todos los boxes
+                    boxes.forEach(box => box.style.display = 'none');
+
+                    if (targetBox) {
+                        // Mostrar el box correspondiente
+                        targetBox.style.display = 'block';
+
+                        // Scroll suave hacia el elemento "box-ctn-titular" dentro del targetBox
+                        const targetTitle = targetBox.querySelector('.ancla');
+                        if (targetTitle) {
+                            targetTitle.scrollIntoView({
+                                behavior: 'smooth',
+                                inline: 'start', // Scroll horizontal al inicio del elemento
+                            });
+                            console.log(`Ancla horizontal hacia ${targetTitle.className}`);
+                        }
+                    }
+                });
+            });
         });
 
     </script>
