@@ -261,6 +261,9 @@ p.ctn-texto{
             .box-intro-2 p b{
                 font-family: 'prelobold';
             }
+        .box-intro-3{
+            padding: 100px 0 0 250px;
+        }
         .box-iframe{                     
             max-width: 300px;
             padding: 0;
@@ -332,10 +335,24 @@ p.ctn-texto{
                 position: absolute;
                 pointer-events: none;
             }
+            .mar-2021{
+                bottom: -100%;
+                left: -100%;
+                max-width: 1550px;
+                position: absolute;
+                pointer-events: none;
+            }      
             .mar-2004{
                 bottom: -100%;
                 left: -100%;
                 max-width: 1300px;
+                position: absolute;
+                pointer-events: none;
+            }    
+            .mar-1996{
+                bottom: -100%;
+                left: -100%;
+                max-width: 900px;
                 position: absolute;
                 pointer-events: none;
             }            
@@ -344,6 +361,12 @@ p.ctn-texto{
             }
             .enterMar2004 {
                 animation: waveEntry2004 2s ease-out forwards, waveSway 3s ease-in-out infinite;
+            }
+            .enterMar2021 {
+                animation: waveEntry2021 2s ease-out forwards, waveSway 3s ease-in-out infinite;
+            }
+            .enterMar1996 {
+                animation: waveEntry1996 2s ease-out forwards, waveSway 3s ease-in-out infinite;
             }
             @keyframes waveEntry {
                 from {
@@ -354,6 +377,26 @@ p.ctn-texto{
                 }
             }
             @keyframes waveEntry2004 {
+                from {
+                    bottom: -100%;
+                    left: -100%;
+                }
+                to {
+                    bottom: -25px; 
+                    left: 0;
+                }
+            }
+            @keyframes waveEntry2021 {
+                from {
+                    bottom: -100%;
+                    left: -100%;
+                }
+                to {
+                    bottom: -25px; 
+                    left: 0;
+                }
+            }
+            @keyframes waveEntry1996 {
                 from {
                     bottom: -100%;
                     left: -100%;
@@ -376,6 +419,9 @@ p.ctn-texto{
             }
             .salirMar2004 {
                 animation: waveOut2004 2s ease-out forwards;
+            }
+            .salirMar1996 {
+                animation: waveOut1996 2s ease-out forwards;
             }
             @keyframes waveOut {
                 from {
@@ -424,6 +470,40 @@ p.ctn-texto{
                     bottom: -100%;
                 }
             }
+        .sofia-2021{
+            bottom: 0;
+            left: 480px;
+            max-width: 850px;
+            opacity: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+            .enterSofia2021 {
+                animation: enterSofiaLeft 3s ease-out forwards;
+            }
+            @keyframes enterSofiaLeft {
+                from {
+                    left: -100%;
+                    opacity: 0;
+                }
+                to {
+                    left: 450px; 
+                    opacity: 1;
+                }
+            }
+            .salirSofia2021 {
+                animation: salirSofiaLeft 3s ease-out forwards;
+            }
+            @keyframes salirSofiaLeft {
+                from {
+                    left: 450px;
+                    opacity: 1;
+                }
+                to {
+                    left: -100%; 
+                    opacity: 0;
+                }
+            }
         .sofia-2024{
             bottom: 0;
             left: 480px;
@@ -433,7 +513,7 @@ p.ctn-texto{
             pointer-events: none;
         }
             .enterSofia2024 {
-                animation: enterSofiaOpacity 2s ease-out forwards;
+                animation: enterSofiaOpacity 3s ease-out forwards;
             }
             @keyframes enterSofiaOpacity {
                 from {
@@ -444,7 +524,7 @@ p.ctn-texto{
                 }
             }
             .salirSofia2024 {
-                animation: salirSofiaOpacity 2s ease-out forwards;
+                animation: salirSofiaOpacity 3s ease-out forwards;
             }
             @keyframes salirSofiaOpacity {
                 from {
@@ -455,25 +535,31 @@ p.ctn-texto{
                 }
             }
         #box-horizontal-2024 .box-ctn-titular,
-        #box-horizontal-2004 .box-ctn-titular{
+        #box-horizontal-2021 .box-ctn-titular,
+        #box-horizontal-2004 .box-ctn-titular,
+        #box-horizontal-1996 .box-ctn-titular{
             left: 0;
             max-width: 400px;                
             position: absolute; 
             top: 50%;
-            z-index: 10;
+            z-index: 20;
             transform: translate(20%, -50%);                
         }
         #box-horizontal-2024 .box-ctn-titular{
             max-width: 455px;
         }
             #box-horizontal-2024 .box-ctn-titular h3,
-            #box-horizontal-2004 .box-ctn-titular h3{
+            #box-horizontal-2021 .box-ctn-titular h3,
+            #box-horizontal-2004 .box-ctn-titular h3,
+            #box-horizontal-1996 .box-ctn-titular h3{
                 color: #fff;
                 font: 70px/0.8 'Broken Family';
                 margin: 0 auto;
             }
             #box-horizontal-2024 .box-ctn-titular img,
-            #box-horizontal-2004 .box-ctn-titular img{
+            #box-horizontal-2021 .box-ctn-titular img,
+            #box-horizontal-2004 .box-ctn-titular img,
+            #box-horizontal-1996 .box-ctn-titular img{
                 border-bottom: 1px solid #000;
                 border-top: 1px solid #000;
                 margin: 30px 0;
@@ -481,7 +567,9 @@ p.ctn-texto{
                 padding: 15px 0;
             }
             #box-horizontal-2024 .box-ctn-titular h4,
-            #box-horizontal-2004 .box-ctn-titular h4{
+            #box-horizontal-2021 .box-ctn-titular h4,
+            #box-horizontal-2004 .box-ctn-titular h4,
+            #box-horizontal-1996 .box-ctn-titular h4{
                 color: #fff;
                 font: 100px/0.8 'Broken Family';
                 margin: 0 auto;
@@ -528,6 +616,26 @@ p.ctn-texto{
                         max-width: 100%;
                         width: 100%;
                     }
+    #box-horizontal-1996{
+        
+    }
+        #box-horizontal-1996 .ctn-box-horizontal{
+            background: url('../img/bg-arena-1996.jpg') repeat-x;
+            background-size: contain;
+            height: 100%;
+            position: relative;
+            width: 4700px;
+        }
+    #box-horizontal-2021{
+        
+    }
+        #box-horizontal-2021 .ctn-box-horizontal{
+            background: url('../img/bg-arena-2021.jpg') repeat-x;
+            background-size: contain;
+            height: 100%;
+            position: relative;
+            width: 4700px;
+        }
     #box-horizontal-2024{
         
     }
