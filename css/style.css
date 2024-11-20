@@ -534,6 +534,19 @@ p.ctn-texto{
                     opacity: 0; 
                 }
             }
+        .sofia-1996{
+            bottom: 0;
+            left: 700px;
+            max-width: 450px;
+            position: absolute;
+            pointer-events: none;
+        }
+            .enterSofia1996 {
+                animation: enterSofiaBottom 2s ease-out forwards;
+            }
+            .salirSofia1996 {
+                animation: salirSofiaBottom 2s ease-out forwards;
+            }
         #box-horizontal-2024 .box-ctn-titular,
         #box-horizontal-2021 .box-ctn-titular,
         #box-horizontal-2004 .box-ctn-titular,
@@ -624,7 +637,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 4700px;
+            width: 4300px;
         }
     #box-horizontal-2021{
         
