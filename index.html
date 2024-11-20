@@ -549,7 +549,96 @@
         </div>
 
         <div class="box-horizontal scrollable" id="box-horizontal-1990">
-            <p>test 1990</p>
+            <div class="ctn-box-horizontal">
+                <div class="ancla"></div>
+                <div class="box-ctn-titular">
+                    <h3>sofi y el mar</h3>
+                    <img src="./img/icon-deslizar.png" alt="" width="100%">
+                    <h4>1990</h4>
+                </div>
+                <img src="./img/bg-mar-1990.webp" alt="" width="100%" class="mar-1990">
+                <img src="./img/sofia-1990.webp" alt="" width="100%" class="sofia-1990">
+                <div class="box-contenido">
+                    <div class="box-bloque" style="margin-left: 200px; max-width: 400px;">
+                        <h5 style="margin: 0; max-width: 355px; padding: 180px 0 0 180px;">Su primera tabla</h5>
+                    </div>
+                    <div class="box-bloque" style="padding: 170px 0 0 50px;">
+                        <div class="box-iframe" id="iframe14">
+                            <img src="./img/estrella.png" alt="" width="100%" class="">
+                            <video 
+                                id="video14"
+                                data-manage-visibility
+                                controls
+                                playsinline
+                                preload="metadata">
+                                <source src="./video/1990/clip-1-2-pre.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>  
+                    </div>  
+                    <div class="box-bloque" style="max-width: 380px; margin-left: 50px; padding: 185px 0 0 0;">
+                        <p>
+                            Aprendía a nadar antes que, a hablar siquiera, en la academia de Tater Ledgard. Luego, conocer las olas estuvieron en manos de Roberto ‘Muelas’ Meza. Pero su mejor maestro fue el mar mismo.
+                        </p>
+                        <h6>
+                            “Siempre he vivido en Punta Hermosa, así que siempre he tenido esa conexión especial. Ni siquiera me acuerdo cuando fue la primera vez que me metí porque era tan recurrente, desde siempre”
+                        </h6>
+                    </div> 
+                    <div class="box-bloque" style="margin-left: 100px; padding: 170px 0 0 50px;">
+                        <div class="box-iframe" id="iframe15">
+                            <img src="./img/estrella.png" alt="" width="100%" class="">
+                            <video 
+                                id="video15"
+                                data-manage-visibility
+                                controls
+                                playsinline
+                                preload="metadata">
+                                <source src="./video/1990/clip-2-3-pre.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>  
+                    </div>  
+                    <div class="box-bloque" style="max-width: 370px; padding: 170px 0 0 0; margin-left: 50px;">
+                        <p>Lo que sí recuerda es aquella tabla Milton Whilar que le regalaron para una navidad.</p>
+                        <h6>“Tenía una florcita y unos colores fosforescentes. Creo que hasta dormimos con la tabla ese día”,</h6>
+                        <p> dice emocionada</p>
+                        <h6>“No hay nada más bonito que ver a un niño con tanta conexión con el mar. A mi hijo también le encana y verlo así me encanta”.</h6>
+                    </div>    
+                    <div class="box-bloque" style="margin-left: 150px; max-width: 330px; padding: 250px 0 0 0;">
+                        <p>
+                            <b>Es Sofía y el mar, la reina Sofía, nuestra ‘Gringa’.</b>
+                            O mejor como ella misma se gráfica: 
+                        </p>
+                        <h6 style="font-size: 32px;">
+                            “Soy una mujer de mar”.
+                        </h6>
+                    </div>  
+                    <div class="separador"></div>
+                    <div class="box-menu-interior">
+                        <div class="box-indicacion-menu">
+                            <img src="./img/icon-mano.png" alt="" width="100%">
+                            <p>Selecciona una Sofi</p>
+                            <ul>
+                                <li id="btn-interior-2024">
+                                    <img class="" src="./img/bg-menu-1-movil.webp" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-2021">
+                                    <img class="" src="./img/bg-menu-2-2-movil.jpg" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-2004">
+                                    <img class="" src="./img/bg-menu-3-movil.webp" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-1996">
+                                    <img class="" src="./img/bg-menu-4-2-movil.jpg" alt="" width="100%">
+                                </li>
+                                <li id="btn-interior-1990">
+                                    <img class="" src="./img/bg-menu-5-2-movil.jpg" alt="" width="100%">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>         
+                </div>
+            </div>
         </div>
 
 
@@ -649,6 +738,22 @@
                 $(".mar").removeClass("enterMar"); 
             })
             .addTo(controller); 
+
+        // mar 1990
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: ".box-horizontal",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".mar-1990").addClass("enterMar1990"); 
+                $(".mar-1990").removeClass("salirMar1990"); 
+            })
+            .on("leave", function(event) {
+                $(".mar-1990").addClass("salirMar1990"); 
+                $(".mar-1990").removeClass("enterMar1990"); 
+            })
+            .addTo(controller);  
             
         // mar 1996
         var controller = new ScrollMagic.Controller();       
@@ -697,6 +802,22 @@
                 $(".mar-2021").removeClass("enterMar2021"); 
             })
             .addTo(controller);  
+        
+        // sofia 1990
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: ".box-horizontal",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".sofia-1990").addClass("enterSofia1990"); 
+                $(".sofia-1990").removeClass("salirSofia1990"); 
+            })
+            .on("leave", function(event) {
+                $(".sofia-1990").addClass("salirSofia1990"); 
+                $(".sofia-1990").removeClass("enterSofia1990"); 
+            })
+            .addTo(controller);
 
         // sofia 1996
         var controller = new ScrollMagic.Controller();       
