@@ -1291,6 +1291,19 @@ p.ctn-texto{
     #box-horizontal-1990 .box-ctn-titular{
         transform: translate(3%, -50%);
     }
+    #box-horizontal-2024 .box-ctn-titular h3, 
+    #box-horizontal-2021 .box-ctn-titular h3, 
+    #box-horizontal-2004 .box-ctn-titular h3, 
+    #box-horizontal-1996 .box-ctn-titular h3,
+    #box-horizontal-1990 .box-ctn-titular h3{
+        font-size: 3.4rem;
+    }
+    #box-horizontal-2024 .box-ctn-titular{
+        max-width: 300px;
+    }
+    #box-horizontal-2024 .ctn-box-horizontal{
+        width: 4900px;
+    }
     #box-horizontal-3 .box-contenido{
         /*pointer-events: none;*/
     }
@@ -1306,6 +1319,43 @@ p.ctn-texto{
     .mar{
         height: 100%;
         width: 115%;
+    }
+    .box-intro{
+        height: 63vh;
+        max-width: 300px;
+    }
+    .box-bloque-video{
+        max-width: 300px;
+    }
+    .box-bloque-video-especial{
+        max-width: auto;
+    }
+        #iframe5{
+            padding: 150px 0 !important;
+        }
+        #iframe6{
+            padding: 150px 0 !important;
+        }
+
+    .bloque-movil-1{
+        margin-right: 50px;
+        max-width: 350px;
+    }
+    .bloque-movil-2{
+        max-width: 350px;
+    }
+    .bloque-movil-3{
+        max-width: 345px;
+    }
+        .bloque-movil-3 h5{
+            padding: 200px 0 0 80px !important;
+        }
+        .bloque-movil-3 p{
+            padding: 0 0 0 80px !important;
+        }
+
+    .sofia-2024{
+        left: 380px;
     }
     .sofia-2004{
         left: 430px;
