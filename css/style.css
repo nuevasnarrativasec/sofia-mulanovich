@@ -32,6 +32,11 @@ html {
          url('https://nuevasnarrativasec.github.io/tablas-de-sarhua/fonts/prelo-bold-webfont.woff') format('woff');
 }
 @font-face {
+    font-family: 'preloextrabold';
+    src: url('../fonts/Prelo-ExtraBold-webfont.woff2') format('woff2'),
+         url('../fonts/Prelo-ExtraBold-webfont.woff') format('woff');
+}
+@font-face {
     font-family: 'prelobold_italic';    
     src: url('../fonts/Prelo-Bold Italic-webfont.woff2') format('woff2'),
          url('../fonts/Prelo-Bold Italic-webfont.woff') format('woff');
@@ -167,7 +172,8 @@ p.ctn-texto{
     max-width: 380px;
 }
     p.ctn-texto span,
-    p.ctn-texto b{
+    p.ctn-texto b,
+    .info-tabla p b{
         font-family: 'prelobold';
     }
     span.color,
@@ -1151,9 +1157,63 @@ p.ctn-texto{
                     to {
                         opacity: 0;
                     }
-                }
-                    
+                }                    
 
+        .box-main-tablas{
+            margin: 0 auto;
+            max-width: 900px;
+        }  
+            .box-tabla{
+                border-bottom: 1px dashed #26A9E0;
+                box-sizing: border-box;
+                margin-top: 30px;
+                padding: 0 0 20px;
+            }
+                .bg{
+                    display: inline-block;
+                    margin-right: 40px;
+                    width: 300px;
+                    vertical-align: top;
+                }
+                    img.bg-tabla-1{
+                        margin-top: 30px;
+                        max-width: 130px;
+                    }
+                    img.bg-tabla-2{
+                        margin-top: 25px;
+                        max-width: 160px;
+                    }
+                    img.bg-tabla-3{
+                        margin-top: 25px;
+                        max-width: 190px;
+                    }
+                    img.bg-tabla-4{
+                        margin-top: 25px;
+                        max-width: 220px;
+                    }
+                    img.bg-tabla-5{
+                        margin-top: 25px;
+                        max-width: 270px;
+                    }
+                .info-tabla{
+                    display: inline-block;
+                    max-width: 400px;
+                    vertical-align: top;
+                }
+                    .info-tabla h6{
+                        color: #26A9E0;
+                        font: 21px/1.2 'preloextrabold';
+                        margin: 0 auto;
+                    }
+                    .info-tabla p{
+                        font: 16px / 1.4 'prelobook';
+                        margin: 0 auto;
+                    }
+            .no-border{
+                border-bottom: 0;
+            }
+        
+        
 .iframe-jw{
     margin: 30px auto 40px;
     max-width: 300px;
@@ -1223,6 +1283,14 @@ p.ctn-texto{
                 display: inline-block;
                 max-width: 90%;
             }
+
+    #box-horizontal-2024 .box-ctn-titular, 
+    #box-horizontal-2021 .box-ctn-titular, 
+    #box-horizontal-2004 .box-ctn-titular, 
+    #box-horizontal-1996 .box-ctn-titular, 
+    #box-horizontal-1990 .box-ctn-titular{
+        transform: translate(3%, -50%);
+    }
     #box-horizontal-3 .box-contenido{
         /*pointer-events: none;*/
     }
@@ -1246,6 +1314,71 @@ p.ctn-texto{
     }
     .box-contenido{
        
+    }
+
+    .box-menu-opciones ul li{
+        display: block;
+        margin-bottom: 20px;
+    }
+    .box-bloque-1 {
+        padding: 0 20px;
+    }
+    .main-movimientos{
+        margin-bottom: 40px;
+    }
+    .box-movimiento-1,
+    .box-movimiento-2,
+    .box-movimiento-3,
+    .box-movimiento-4,
+    .box-movimiento-5,
+    .box-movimiento-6,
+    .box-movimiento-7,
+    .box-movimiento-8 {
+        text-align: left;
+        transform: none;
+    }
+    .box-movimiento p,
+    .box-movimiento-9, 
+    .box-movimiento-10 {
+        max-width: 100%;
+        padding: 0;
+    }
+    .box-movimiento-9, 
+    .box-movimiento-10 {
+        margin: 0 auto 30px;
+    }
+    ul.criterios li{
+        margin: 10px 20px 20px;
+        max-width: 115px;
+    }
+    .separador-criterios{
+        display: none;
+    }
+    .box-grafico-puntaje ul li{
+        width: 60px;
+    }
+        @keyframes enterIconLeft {
+            from {
+                left: 0;
+                opacity: 0;
+            }
+            to {
+                left: 70%; 
+                opacity: 1;
+            }
+        }
+    span.separador-puntaje{
+        height: 135px;
+    }
+    .box-grafico-puntaje ul li p{
+        text-align: left;
+        transform: rotate(-90deg) translate(-35px, 0);
+    }
+    .bg{
+
+    }
+    .info-tabla{
+        margin-top: 20px;
     }
 
 }
