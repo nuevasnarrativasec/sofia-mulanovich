@@ -1307,6 +1307,15 @@ p.ctn-texto{
     #box-horizontal-2021 .ctn-box-horizontal{
         width: 4300px;
     }
+    #box-horizontal-2004 .ctn-box-horizontal{
+        width: 7300px;
+    }
+    #box-horizontal-1996 .ctn-box-horizontal{
+        width: 4100px;
+    }
+    #box-horizontal-1990 .ctn-box-horizontal{
+        width: 4300px;
+    }
     #box-horizontal-3 .box-contenido{
         /*pointer-events: none;*/
     }
@@ -1334,6 +1343,9 @@ p.ctn-texto{
         height: 100%;
         width: 115%;
     }
+    .sofia-1990{
+        max-width: 470px;
+    }
     .box-intro{
         height: 63vh;
         max-width: 300px;
@@ -1349,6 +1361,14 @@ p.ctn-texto{
         }
         #iframe6{
             padding: 150px 0 !important;
+        }
+    .box-bloque-video-2{
+        margin-left: 80px;
+        max-width: 300px;
+    }
+        #iframe3{
+            margin: 0 !important;
+            padding: 0 0 0 0!important;           
         }
 
     .bloque-movil-1{
@@ -1376,6 +1396,39 @@ p.ctn-texto{
     }
     .bloque-movil-6{
         max-width: 345px !important;
+    }
+    .bloque-movil-7{
+        max-width: 345px !important;
+    }
+        .bloque-movil-7 h6{
+            padding: 180px 0 0 20px !important;        
+        }
+        .bloque-movil-7 p{
+            padding: 0 0 0 20px !important;        
+        }
+    .bloque-movil-8{
+
+    }
+        .bloque-movil-8 p{
+            max-width: 300px !important;
+        }
+    .bloque-movil-9{
+
+    }
+        .bloque-movil-9 h6{
+            max-width: 300px !important; 
+        }
+    .bloque-movil-10{
+        max-width: 350px !important;
+    }
+    .bloque-movil-11{
+        max-width: 350px !important;
+    }
+    .bloque-movil-12{
+        max-width: 320px !important;
+    }
+    .bloque-movil-13{
+        max-width: 320px !important;
     }
 
     .sofia-2024{
