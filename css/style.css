@@ -1304,6 +1304,9 @@ p.ctn-texto{
     #box-horizontal-2024 .ctn-box-horizontal{
         width: 4900px;
     }
+    #box-horizontal-2021 .ctn-box-horizontal{
+        width: 4300px;
+    }
     #box-horizontal-3 .box-contenido{
         /*pointer-events: none;*/
     }
@@ -1316,6 +1319,17 @@ p.ctn-texto{
             #box-horizontal-3 .box-ctn-titular h3{
                 font-size: 3.8rem;
             }
+
+        @keyframes waveEntry2021 {
+            from {
+                bottom: -100%;
+                left: -100%;
+            }
+            to {
+                bottom: 0; 
+                left: 0;
+            }
+        }
     .mar{
         height: 100%;
         width: 115%;
@@ -1353,6 +1367,16 @@ p.ctn-texto{
         .bloque-movil-3 p{
             padding: 0 0 0 80px !important;
         }
+    .bloque-movil-4{
+        max-width: 345px;
+    }
+    .bloque-movil-5{
+        max-width: 345px;
+        padding: 150px 0 0 50px !important;
+    }
+    .bloque-movil-6{
+        max-width: 345px !important;
+    }
 
     .sofia-2024{
         left: 380px;
