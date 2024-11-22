@@ -931,6 +931,27 @@
             
         </div>
 
+        <div class="box-main-mensaje">
+            <form id="messageForm">
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" required></textarea><br>
+                
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+                
+                <label for="edad">Edad:</label><br>
+                <input type="number" id="edad" name="edad" required><br>
+                
+                <label for="correo">Correo:</label><br>
+                <input type="email" id="correo" name="correo" required><br><br>
+                
+                <button type="submit">Enviar</button>
+              </form>
+            
+              <h2>Mensajes Aprobados</h2>
+              <div id="approvedMessages"></div>
+        </div>
+
 
         <!--<div class="box-footer">
             <div class="box-ctn-footer">
@@ -1584,6 +1605,54 @@
         });
 
     </script>
+
+    <!-- mensajes -->
+    <script>
+        const API_URL = 'https://script.google.com/macros/s/AKfycbxGXiVRtqnokxhTsBGcpxME-35AUrBkWIIk9NVkj08_6AS9g57hCCCDtx6nS5pSLXXOLA/exec';
+    
+        // Enviar datos al servidor
+        document.getElementById('messageForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const mensaje = document.getElementById('mensaje').value;
+          const nombre = document.getElementById('nombre').value;
+          const edad = document.getElementById('edad').value;
+          const correo = document.getElementById('correo').value;
+    
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            body: JSON.stringify({ mensaje, nombre, edad, correo }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+    
+          if (response.ok) {
+            alert('Mensaje enviado con éxito.');
+            document.getElementById('messageForm').reset();
+            loadApprovedMessages();
+          } else {
+            alert('Hubo un error al enviar el mensaje.');
+          }
+        });
+    
+        // Cargar mensajes aprobados
+        async function loadApprovedMessages() {
+          const response = await fetch(API_URL);
+          const messages = await response.json();
+          const approvedMessagesDiv = document.getElementById('approvedMessages');
+          approvedMessagesDiv.innerHTML = '';
+    
+          messages.forEach((msg) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.innerHTML = `<p><strong>Mensaje:</strong> ${msg.mensaje}</p>
+                                    <p><strong>Nombre:</strong> ${msg.nombre}</p>
+                                    <p><strong>Edad:</strong> ${msg.edad}</p>`;
+            approvedMessagesDiv.appendChild(messageDiv);
+          });
+        }
+    
+        // Cargar mensajes al cargar la página
+        loadApprovedMessages();
+      </script>
 
 </body>
 </html>
