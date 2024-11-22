@@ -1302,7 +1302,7 @@ p.ctn-texto{
         max-width: 300px;
     }
     #box-horizontal-2024 .ctn-box-horizontal{
-        width: 4900px;
+        width: 4950px;
     }
     #box-horizontal-2021 .ctn-box-horizontal{
         width: 4300px;
@@ -1349,6 +1349,9 @@ p.ctn-texto{
     .box-intro{
         height: 63vh;
         max-width: 300px;
+    }
+    .box-intro-2{
+        margin-right: 50px;
     }
     .box-bloque-video{
         max-width: 300px;
