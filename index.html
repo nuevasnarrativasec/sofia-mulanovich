@@ -1608,50 +1608,82 @@
 
     <!-- mensajes -->
     <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbyxskoobOvSOszvnz-slBImQPn__CF3Ijadyig3VeDCe8Qc8fiwwbDN2qt_5xE3Ucgxjg/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbzKEwXZEsI-x9Sgpi_at0WMaLqAAmDk4KDPdNY-yuas-_vMrWVh2sQ0y2IaZ8hvNie4_g/exec';
     
-        // Enviar datos al servidor
-        document.getElementById('messageForm').addEventListener('submit', async (e) => {
-          e.preventDefault();
-          
-          const mensaje = document.getElementById('mensaje').value;
-          const nombre = document.getElementById('nombre').value;
-          const edad = document.getElementById('edad').value;
-          const correo = document.getElementById('correo').value;
-    
-          const response = await fetch(API_URL, {
-            method: 'POST',
-            body: JSON.stringify({ mensaje, nombre, edad, correo }),
-            headers: { 'Content-Type': 'application/json' },
-          });
-    
-          if (response.ok) {
-            alert('Mensaje enviado con éxito.');
-            document.getElementById('messageForm').reset();
-            loadApprovedMessages();
-          } else {
-            alert('Hubo un error al enviar el mensaje.');
-          }
-        });
-    
-        // Cargar mensajes aprobados
-        async function loadApprovedMessages() {
-          const response = await fetch(API_URL);
-          const messages = await response.json();
-          const approvedMessagesDiv = document.getElementById('approvedMessages');
-          approvedMessagesDiv.innerHTML = '';
-    
-          messages.forEach((msg) => {
-            const messageDiv = document.createElement('div');
-            messageDiv.innerHTML = `<p><strong>Mensaje:</strong> ${msg.mensaje}</p>
-                                    <p><strong>Nombre:</strong> ${msg.nombre}</p>
-                                    <p><strong>Edad:</strong> ${msg.edad}</p>`;
-            approvedMessagesDiv.appendChild(messageDiv);
-          });
-        }
-    
-        // Cargar mensajes al cargar la página
-        loadApprovedMessages();
+        // Manejar envío del formulario
+document.getElementById('messageForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Capturar valores de los campos
+  const mensaje = document.getElementById('mensaje').value.trim();
+  const nombre = document.getElementById('nombre').value.trim();
+  const edad = document.getElementById('edad').value.trim();
+  const correo = document.getElementById('correo').value.trim();
+
+  // Validar que todos los campos estén llenos
+  if (!mensaje || !nombre || !edad || !correo) {
+    alert('Por favor, completa todos los campos.');
+    return;
+  }
+
+  try {
+    // Enviar datos al servidor
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ mensaje, nombre, edad, correo }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Mensaje enviado con éxito.');
+      document.getElementById('messageForm').reset(); // Reiniciar formulario
+      loadApprovedMessages(); // Actualizar mensajes aprobados
+    } else {
+      alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
+    }
+  } catch (error) {
+    console.error('Error en la solicitud:', error);
+    alert('Ocurrió un error al enviar los datos. Por favor, revisa tu conexión.');
+  }
+});
+
+// Cargar mensajes aprobados
+async function loadApprovedMessages() {
+  try {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error('Error al cargar los mensajes.');
+    }
+
+    const messages = await response.json();
+
+    // Limpiar contenedor de mensajes aprobados
+    const approvedMessagesDiv = document.getElementById('approvedMessages');
+    approvedMessagesDiv.innerHTML = '';
+
+    // Añadir mensajes aprobados
+    if (messages.length === 0) {
+      approvedMessagesDiv.innerHTML = '<p>No hay mensajes aprobados.</p>';
+    } else {
+      messages.forEach((msg) => {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message-item'); // Añadir clase para estilo si es necesario
+        messageDiv.innerHTML = `
+          <p><strong>Mensaje:</strong> ${msg.mensaje}</p>
+          <p><strong>Nombre:</strong> ${msg.nombre}</p>
+          <p><strong>Edad:</strong> ${msg.edad}</p>`;
+        approvedMessagesDiv.appendChild(messageDiv);
+      });
+    }
+  } catch (error) {
+    console.error('Error al cargar mensajes:', error);
+    alert('Ocurrió un error al cargar los mensajes aprobados.');
+  }
+}
+
+// Cargar mensajes aprobados al iniciar la página
+loadApprovedMessages();
       </script>
 
 </body>
