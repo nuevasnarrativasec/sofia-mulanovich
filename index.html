@@ -652,30 +652,28 @@
             </div>
         </div>
 
-        <div class="box-cyan">
-
-            <div class="box-menu-opciones">
-                <div class="box-indicacion-menu">
-                    <img src="./img/icon-mano.png" alt="" width="100%">
-                    <p>Selecciona una opción</p>
-                </div>
-                <ul>
-                    <li>
-                        <img src="./img/icon-opcion-1.png?v2" alt="" width="100%">
-                        <p>a surfear</p>
-                    </li>
-                    <li>
-                        <img src="./img/icon-opcion-2.png?v2" alt="" width="100%">
-                        <p>las playas del perú</p>
-                    </li>
-                    <li>
-                        <img src="./img/icon-opcion-3.png?v2" alt="" width="100%">
-                        <p>el largo camino</p>
-                    </li>
-                </ul>
+        <div class="box-menu-opciones" id="box-menu-opciones">
+            <div class="box-indicacion-menu">
+                <img src="./img/icon-mano.png" alt="" width="100%">
+                <p>Selecciona una opción</p>
             </div>
-
-            <div class="box-bloque-1">
+            <ul>
+                <li id="btn-bloque-1">
+                    <img src="./img/icon-opcion-1.png?v2" alt="" width="100%">
+                    <p>a surfear</p>
+                </li>
+                <li id="btn-bloque-2">
+                    <img src="./img/icon-opcion-2.png?v2" alt="" width="100%">
+                    <p>las playas del perú</p>
+                </li>
+                <li id="btn-bloque-3">
+                    <img src="./img/icon-opcion-3.png?v2" alt="" width="100%">
+                    <p>el largo camino</p>
+                </li>
+            </ul>
+        </div>       
+            
+        <div class="box-bloque-1 box-bloque-opciones" id="box-bloque-1">
                 <h3>
                     <img src="./img/icon-opcion-1.png" alt="" width="100%">
                     <div class="clear"></div>
@@ -927,29 +925,35 @@
                 </div>
 
 
-            </div>
-            
+        </div> 
+
+        <div class="box-bloque-2 box-bloque-opciones" id="box-bloque-2">
+
+        </div>
+
+        <div class="box-bloque-3 box-bloque-opciones" id="box-bloque-3">
+
         </div>
 
         <div class="box-main-mensaje">
             <form id="messageForm">
-                <label for="mensaje">Mensaje:</label><br>
-                <textarea id="mensaje" name="mensaje" required></textarea><br>
-                
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br>
-                
-                <label for="edad">Edad:</label><br>
-                <input type="number" id="edad" name="edad" required><br>
-                
-                <label for="correo">Correo:</label><br>
-                <input type="email" id="correo" name="correo" required><br><br>
-                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+              
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+              
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required />
+              
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required />
+              
                 <button type="submit">Enviar</button>
               </form>
-            
-              <h2>Mensajes Aprobados</h2>
+              
               <div id="approvedMessages"></div>
+              
         </div>
 
 
@@ -1608,83 +1612,101 @@
 
     <!-- mensajes -->
     <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbzKEwXZEsI-x9Sgpi_at0WMaLqAAmDk4KDPdNY-yuas-_vMrWVh2sQ0y2IaZ8hvNie4_g/exec';
-    
-        // Manejar envío del formulario
-document.getElementById('messageForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+        const API_URL = "https://script.google.com/macros/s/AKfycbxD4qcepRdUcqDJYPOqe0HuXcpcdieSX0Ouwgdkrd40MDiyyTn4XIDlAy3Z8G8GBF0ZsQ/exec";
 
-  // Capturar valores de los campos
-  const mensaje = document.getElementById('mensaje').value.trim();
-  const nombre = document.getElementById('nombre').value.trim();
-  const edad = document.getElementById('edad').value.trim();
-  const correo = document.getElementById('correo').value.trim();
+        // Enviar datos al servidor
+        document.getElementById('messageForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const mensaje = document.getElementById('mensaje').value;
+            const nombre = document.getElementById('nombre').value;
+            const edad = document.getElementById('edad').value;
+            const correo = document.getElementById('correo').value;
 
-  // Validar que todos los campos estén llenos
-  if (!mensaje || !nombre || !edad || !correo) {
-    alert('Por favor, completa todos los campos.');
-    return;
-  }
+            try {
+                const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ mensaje, nombre, edad, correo })
+                });
 
-  try {
-    // Enviar datos al servidor
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      body: JSON.stringify({ mensaje, nombre, edad, correo }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+                if (response.ok) {
+                alert('Mensaje enviado con éxito.');
+                document.getElementById('messageForm').reset();
+                loadApprovedMessages();
+                } else {
+                throw new Error('Error al enviar el mensaje.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al enviar el mensaje.');
+            }
+            });
 
-    if (response.ok) {
-      alert('Mensaje enviado con éxito.');
-      document.getElementById('messageForm').reset(); // Reiniciar formulario
-      loadApprovedMessages(); // Actualizar mensajes aprobados
-    } else {
-      alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
-    }
-  } catch (error) {
-    console.error('Error en la solicitud:', error);
-    alert('Ocurrió un error al enviar los datos. Por favor, revisa tu conexión.');
-  }
-});
+            // Cargar mensajes aprobados
+            async function loadApprovedMessages() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                throw new Error(`Error al cargar los mensajes aprobados: ${response.status}`);
+                }
+                const messages = await response.json();
+                console.log('Mensajes aprobados:', messages); // Agregar un log para revisar los datos
 
-// Cargar mensajes aprobados
-async function loadApprovedMessages() {
-  try {
-    const response = await fetch(API_URL);
+                const approvedMessagesDiv = document.getElementById('approvedMessages');
+                approvedMessagesDiv.innerHTML = '';
 
-    if (!response.ok) {
-      throw new Error('Error al cargar los mensajes.');
-    }
+                messages.forEach((msg) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.innerHTML = `<p><strong>Mensaje:</strong> ${msg.mensaje}</p>
+                                        <p><strong>Nombre:</strong> ${msg.nombre}</p>
+                                        <p><strong>Edad:</strong> ${msg.edad}</p>`;
+                approvedMessagesDiv.appendChild(messageDiv);
+                });
+            } catch (error) {
+                console.error('Error al cargar los mensajes aprobados:', error);
+                alert('Ocurrió un error al cargar los mensajes aprobados.');
+            }
+        }
 
-    const messages = await response.json();
 
-    // Limpiar contenedor de mensajes aprobados
-    const approvedMessagesDiv = document.getElementById('approvedMessages');
-    approvedMessagesDiv.innerHTML = '';
-
-    // Añadir mensajes aprobados
-    if (messages.length === 0) {
-      approvedMessagesDiv.innerHTML = '<p>No hay mensajes aprobados.</p>';
-    } else {
-      messages.forEach((msg) => {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message-item'); // Añadir clase para estilo si es necesario
-        messageDiv.innerHTML = `
-          <p><strong>Mensaje:</strong> ${msg.mensaje}</p>
-          <p><strong>Nombre:</strong> ${msg.nombre}</p>
-          <p><strong>Edad:</strong> ${msg.edad}</p>`;
-        approvedMessagesDiv.appendChild(messageDiv);
-      });
-    }
-  } catch (error) {
-    console.error('Error al cargar mensajes:', error);
-    alert('Ocurrió un error al cargar los mensajes aprobados.');
-  }
-}
-
-// Cargar mensajes aprobados al iniciar la página
+// Cargar mensajes al cargar la página
 loadApprovedMessages();
-      </script>
+
+    </script>
+
+    <!-- menu opciones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('#btn-bloque-1, #btn-bloque-2, #btn-bloque-3');
+            const bloques = document.querySelectorAll('.box-bloque-opciones');
+            const menuOpciones = document.getElementById('box-menu-opciones');
+
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    // Manejar la activación de botones
+                    buttons.forEach(btn => btn.classList.add('inactivo'));
+                    button.classList.remove('inactivo');
+
+                    // Mostrar el bloque correspondiente
+                    bloques.forEach(bloque => bloque.classList.remove('active'));
+                    const bloqueActivo = document.getElementById(`box-bloque-${index + 1}`);
+                    bloqueActivo.classList.add('active');
+
+                    // Cambiar clase de `box-menu-opciones`
+                    menuOpciones.classList.remove('cyan', 'crema', 'azul');
+                    if (index === 0) {
+                        menuOpciones.classList.add('cyan');
+                    } else if (index === 1) {
+                        menuOpciones.classList.add('crema');
+                    } else if (index === 2) {
+                        menuOpciones.classList.add('azul');
+                    }
+                });
+            });
+        });
+
+    </script>
 
 </body>
 </html>

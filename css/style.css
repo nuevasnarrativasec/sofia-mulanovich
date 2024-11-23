@@ -712,12 +712,12 @@ p.ctn-texto{
             width: 5600px;
         }        
             
-.box-cyan{
+.box-cyan,
+.cyan{
     background: #EFFAFD;
 }
     .box-menu-opciones{
         padding: 30px 0;
-        margin-bottom: 80px;
     }
         .box-menu-opciones ul{
             list-style: none;
@@ -749,8 +749,24 @@ p.ctn-texto{
                     max-width: 130px;
                     text-align: center;
                 }
+    .box-bloque-opciones {
+        display: none;
+    }
+    .box-bloque-opciones.active {
+        display: block;
+    }
+    .inactivo {
+        opacity: 0.5;
+    }
+    .crema {
+        background-color: beige;
+    }
+    .azul {
+        background-color: blue;
+    }
     .box-bloque-1{
-
+        background: #EFFAFD;
+        padding-top: 80px;
     }
         .box-bloque-1 h3{
             border-bottom: 1px solid #000;
