@@ -674,24 +674,24 @@
         </div>       
             
         <div class="box-bloque-1 box-bloque-opciones" id="box-bloque-1">
-                <h3>
-                    <img src="./img/icon-opcion-1.png" alt="" width="100%">
-                    <div class="clear"></div>
-                    a surfear
-                </h3>
+            <h3>
+                <img src="./img/icon-opcion-1.png" alt="" width="100%">
+                <div class="clear"></div>
+                a surfear
+            </h3>
 
-                <h4>
-                    Técnicas y <br> movimientos de surf
-                </h4>
-                <div class="iframe-jw box-video">
-                    <div style="position:relative;overflow:hidden;padding-bottom:177.78%"><iframe src="https://cdn.jwplayer.com/players/66VM90JZ-sfGpVx0W.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Sofía Mulanovich - Técnicas para surfear" style="position:absolute;" allowfullscreen></iframe></div>
-                </div>
+            <h4>
+                Técnicas y <br> movimientos de surf
+            </h4>
+            <div class="iframe-jw box-video">
+                <div style="position:relative;overflow:hidden;padding-bottom:177.78%"><iframe src="https://cdn.jwplayer.com/players/lMAHZaqg-sfGpVx0W.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Sofía Mulanovich - Técnica para surfear" style="position:absolute;" allowfullscreen></iframe></div>
+            </div>
 
-                <h4>
-                    Principales movimientos
-                </h4>
+            <h4>
+                Principales movimientos
+            </h4>
 
-                <div class="main-movimientos">                
+            <div class="main-movimientos">                
                     <div class="box-movimiento box-movimiento-1">
                         <h5>Take off / Drop</h5>
                         <img src="./img/bg-maniobra-1.png" alt="" width="100%" class="bg-maniobra-1">
@@ -760,13 +760,13 @@
                             <b>Un movimiento difícil de ejecutar.</b> La maniobra consiste en efectuar un giro brusco en la cresta de la ola, pero realizando una curva en una forma de ocho al momento de bajar. Se puede recibir un buen puntaje al combinar fuerzas, control y estilo. 
                         </p>
                     </div>
-                </div>
+            </div>
 
-                <h4>
-                    Maniobras y puntajes
-                </h4>
+            <h4>
+                Maniobras y puntajes
+            </h4>
                 <div class="iframe-jw box-video">
-                    <div style="position:relative;overflow:hidden;padding-bottom:177.78%"><iframe src="https://cdn.jwplayer.com/players/66VM90JZ-sfGpVx0W.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Sofía Mulanovich - Técnicas para surfear" style="position:absolute;" allowfullscreen></iframe></div>
+                    <div style="position:relative;overflow:hidden;padding-bottom:177.78%"><iframe src="https://cdn.jwplayer.com/players/lBGD1taY-sfGpVx0W.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Sofía Mulanovich - Maniobras y puntajes" style="position:absolute;" allowfullscreen></iframe></div>
                 </div>
 
                 <h4>
@@ -928,6 +928,50 @@
         </div> 
 
         <div class="box-bloque-2 box-bloque-opciones" id="box-bloque-2">
+            <h3>
+                <img src="./img/icon-opcion-2.png" alt="" width="100%">
+                <div class="clear"></div>
+                las playas del perú
+            </h3>
+
+            <h4>
+                Su top cinco
+            </h4>
+            <p class="ctn-texto">             
+                <b>Sofía ha recorrido el litoral peruano en busca de las mejores olas,</b>       
+                no solo por diversión, sino también para encontrar la exigencia que la ayudarán a enfrentar condiciones similares en otros lugares del mundo.
+            </p>
+
+            <ul class="playas">
+                <li>
+                    <img src="./img/bg-playa-1.webp" alt="" width="100%">
+                </li>
+                <li>
+                    <img src="./img/bg-playa-2.webp" alt="" width="100%">
+                </li>
+                <li>
+                    <img src="./img/bg-playa-3.webp" alt="" width="100%">
+                </li>
+            </ul>
+
+            <div class="box-audio" id="box-audio-1">
+                <img src="./img/bg-audio.webp" alt="" width="100%">
+                <audio src="./audio/audio-1.mp3" controls></audio>
+            </div>
+
+            <ul class="playas">
+                <li>
+                    <img src="./img/bg-playa-4.webp" alt="" width="100%">
+                </li>
+                <li>
+                    <img src="./img/bg-playa-5.webp" alt="" width="100%">
+                </li>
+            </ul>
+
+            <div class="box-audio" id="box-audio-2">
+                <img src="./img/bg-audio.webp" alt="" width="100%">
+                <audio src="./audio/audio-2.mp3" controls></audio>
+            </div>
 
         </div>
 
@@ -1681,9 +1725,19 @@ loadApprovedMessages();
             const buttons = document.querySelectorAll('#btn-bloque-1, #btn-bloque-2, #btn-bloque-3');
             const bloques = document.querySelectorAll('.box-bloque-opciones');
             const menuOpciones = document.getElementById('box-menu-opciones');
+            const audios = document.querySelectorAll('.box-audio audio');
 
+            // Función para pausar todos los audios
+            const pauseAllAudios = () => {
+                audios.forEach(audio => audio.pause());
+            };
+
+            // Manejar los botones
             buttons.forEach((button, index) => {
                 button.addEventListener('click', () => {
+                    // Pausar todos los audios
+                    pauseAllAudios();
+
                     // Manejar la activación de botones
                     buttons.forEach(btn => btn.classList.add('inactivo'));
                     button.classList.remove('inactivo');
@@ -1704,8 +1758,36 @@ loadApprovedMessages();
                     }
                 });
             });
-        });
 
+            // Evitar reproducción simultánea de audios
+            audios.forEach(audio => {
+                audio.addEventListener('play', () => {
+                    audios.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- pausar audios -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audios = document.querySelectorAll('.box-audio audio');
+
+            audios.forEach(audio => {
+                audio.addEventListener('play', () => {
+                    // Pausar todos los demás audios
+                    audios.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                        }
+                    });
+                });
+            });
+        });
     </script>
 
 </body>

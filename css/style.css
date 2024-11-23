@@ -759,7 +759,7 @@ p.ctn-texto{
         opacity: 0.5;
     }
     .crema {
-        background-color: beige;
+        background-color: #FFF7E6
     }
     .azul {
         background-color: blue;
@@ -768,12 +768,18 @@ p.ctn-texto{
         background: #EFFAFD;
         padding-top: 80px;
     }
-        .box-bloque-1 h3{
+    .box-bloque-2{
+        background: #FFF7E6;
+        padding: 80px 0;
+    }
+        .box-bloque-1 h3,
+        .box-bloque-2 h3{
             border-bottom: 1px solid #000;
             border-top: 1px solid #000;
             font: 36px/1.1 'Broken Family';
             margin: 0 auto 50px;
             max-width: 400px;
+            padding-bottom: 30px;
             position: relative;
             text-align: center;
         }
@@ -782,7 +788,13 @@ p.ctn-texto{
                 margin-top: -50px;           
                 max-width: 100px;                
             }
-        .box-bloque-1 h4{
+            .box-bloque-2 h3 img{
+                background-color: #FFF7E6;
+                margin-top: -50px;           
+                max-width: 100px;       
+            }
+        .box-bloque-1 h4,
+        .box-bloque-2 h4{
             font: 24px/1.1 'Broken Family';
             margin: 0 auto 10px;
             max-width: 400px;
@@ -1228,6 +1240,26 @@ p.ctn-texto{
             .no-border{
                 border-bottom: 0;
             }
+ul.playas{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}   
+    ul.playas li{
+        display: inline-block;
+        margin: 20px;
+        max-width: 300px;
+        vertical-align: top;
+    }   
+.box-audio{
+    margin: 50px auto;
+    max-width: 400px;
+}   
+    .box-audio img{
+        display: inline-block;
+        max-width: 60px;
+        vertical-align: top;
+    }
         
         
 .iframe-jw{
@@ -1526,6 +1558,16 @@ p.ctn-texto{
     .info-tabla{
         margin-top: 20px;
     }
+    .box-bloque-2 h3{
+        margin: 0 20px 50px;
+    }
+    .box-audio{
+        padding: 0 20px;
+    }
+        .box-audio img{
+            display: block;
+            margin: 0 auto 10px;
+        }
 
 }
 
