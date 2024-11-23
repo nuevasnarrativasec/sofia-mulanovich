@@ -1545,6 +1545,17 @@ ul.playas{
                         max-width: 300px;
                         padding-left: 50px;
                     }
+    .surfer{
+        background: url(../img/bg-surfer.png) repeat-x;
+        background-size: cover;
+        height: 100px;
+        left: 50%;        
+        position: fixed;
+        transform: translate(-60%, 50%);        
+        top: 50%;
+        width: 43px;
+        z-index: 10;
+    }
 
         
 .iframe-jw{
