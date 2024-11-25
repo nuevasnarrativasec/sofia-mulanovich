@@ -1150,7 +1150,7 @@
             </div>
         </div>
 
-        <!--<div class="box-main-mensaje">
+        <div class="box-main-mensaje">
             <form id="messageForm">
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required></textarea>
@@ -1160,6 +1160,9 @@
               
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" required />
+
+                <label for="distrito">Distrito:</label>
+                <input type="text" id="distrito" name="distrito" required />
               
                 <label for="correo">Correo:</label>
                 <input type="email" id="correo" name="correo" required />
@@ -1169,7 +1172,7 @@
               
               <div id="approvedMessages"></div>
               
-        </div>-->
+        </div>
 
 
         <!--<div class="box-footer">
@@ -1843,7 +1846,7 @@
 
     <!-- mensajes -->
     <script>
-        const API_URL = "https://script.google.com/macros/s/AKfycbxD4qcepRdUcqDJYPOqe0HuXcpcdieSX0Ouwgdkrd40MDiyyTn4XIDlAy3Z8G8GBF0ZsQ/exec";
+        const API_URL = "https://script.google.com/macros/s/AKfycbzIpLWB_NZXa9yhPeyV1RDe55Hy_qBvo2cplPAhInLFCfMSGyNGbFeN2WxDSRo-2IvNXg/exec";
 
         // Enviar datos al servidor
         document.getElementById('messageForm').addEventListener('submit', async (e) => {
@@ -1852,21 +1855,22 @@
             const mensaje = document.getElementById('mensaje').value;
             const nombre = document.getElementById('nombre').value;
             const edad = document.getElementById('edad').value;
+            const distrito = document.getElementById('distrito').value;
             const correo = document.getElementById('correo').value;
 
             try {
                 const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ mensaje, nombre, edad, correo })
+                body: new URLSearchParams({ mensaje, nombre, edad, distrito, correo })
                 });
 
                 if (response.ok) {
                 alert('Mensaje enviado con éxito.');
-                document.getElementById('messageForm').reset();
-                loadApprovedMessages();
+                    document.getElementById('messageForm').reset();
+                    loadApprovedMessages();
                 } else {
-                throw new Error('Error al enviar el mensaje.');
+                    throw new Error('Error al enviar el mensaje.');
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -1891,7 +1895,8 @@
                 const messageDiv = document.createElement('div');
                 messageDiv.innerHTML = `<p><strong>Mensaje:</strong> ${msg.mensaje}</p>
                                         <p><strong>Nombre:</strong> ${msg.nombre}</p>
-                                        <p><strong>Edad:</strong> ${msg.edad}</p>`;
+                                        <p><strong>Edad:</strong> ${msg.edad}</p>
+                                        <p><strong>Distrito:</strong> ${msg.distrito}</p>`;
                 approvedMessagesDiv.appendChild(messageDiv);
                 });
             } catch (error) {
