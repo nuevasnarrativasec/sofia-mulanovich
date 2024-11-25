@@ -1655,6 +1655,8 @@ ul.playas{
             box-sizing: border-box;
             font: 14px/1.2 'prelobook';
             margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
         }
         #messageForm textarea{
             border: 1px solid #c2c2c2;
@@ -1670,13 +1672,46 @@ ul.playas{
             margin: 0 auto 15px;
         }
         .box-input-nombre{
+            margin-right: 5px;
             width: 100%;
         }
             .box-input-nombre input{
                 padding: 5px;
                 width: 100%;
             }
-
+        .box-input-50{
+            display: inline-block;
+            vertical-align: top;
+            width: 49%;
+        }
+        .box-input-80{
+            display: inline-block;
+            vertical-align: top;
+            width: 80%;
+        }
+        .input-edad{
+            margin-right: 10px;
+            width: 15%;
+        }
+            .input-edad input{
+                padding: 5px;
+                width: 100%;
+            }
+        #messageForm button{
+            background-color: #26A9E0;
+            border: 1px solid #26A9E0;
+            border-radius: 32px;  
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font: 16px/1.1 'Broken Family';
+            margin: 10px auto 0;
+            padding: 10px 15px;
+            text-align: center;
+        }
+    #approvedMessages{
+        
+    }
 
 
 @media only screen and (max-width: 640px) {    
