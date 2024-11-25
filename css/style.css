@@ -1625,6 +1625,60 @@ ul.playas{
 .fslightbox-slide-number-container{
     opacity: 0;
 }
+
+.box-main-mensaje{
+    background-color: #eaf2f6;
+}
+    .box-main-mensaje h3{
+        font: 22px / 1.1 'Broken Family';
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    #messageForm{
+        box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+        #messageForm label{
+            display: block;
+            font: 17px/1 'prelobold';
+            margin-bottom: 3px;
+        }
+            #messageForm label span{
+                display: block;
+                font: 16px/1.2 'prelobook';
+            }        
+        #messageForm input{
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font: 14px/1.2 'prelobook';
+            margin-bottom: 10px;
+        }
+        #messageForm textarea{
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font: 16px/1.2 'prelobook';
+            min-height: 80px;
+            padding: 5px;
+            width: 100%;
+        }
+        #charCount{
+            font: 14px/1.2 'prelobook';
+            margin: 0 auto 15px;
+        }
+        .box-input-nombre{
+            width: 100%;
+        }
+            .box-input-nombre input{
+                padding: 5px;
+                width: 100%;
+            }
+
+
+
 @media only screen and (max-width: 640px) {    
 
     #wst{

@@ -1151,12 +1151,19 @@
         </div>
 
         <div class="box-main-mensaje">
+            <h3>Déjale un mensaje a Sofía</h3>
             <form id="messageForm">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-              
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required />
+                <label for="mensaje">
+                    Mensaje:                    
+                </label>
+                <textarea id="mensaje" name="mensaje" required maxlength="200" placeholder="Máximo 200 caracteres"></textarea>
+                <p id="charCount">0 de 200 caracteres</p>
+                
+                <div class="box-input-nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
+                
               
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" required />
@@ -1844,7 +1851,7 @@
 
     </script>
 
-    <!-- mensajes -->
+    <!-- envía tu mensaje a Sofía -->
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbzIpLWB_NZXa9yhPeyV1RDe55Hy_qBvo2cplPAhInLFCfMSGyNGbFeN2WxDSRo-2IvNXg/exec";
 
@@ -1905,9 +1912,19 @@
             }
         }
 
+        // Cargar mensajes al cargar la página
+        loadApprovedMessages();
 
-// Cargar mensajes al cargar la página
-loadApprovedMessages();
+        document.addEventListener('DOMContentLoaded', () => {
+            const mensajeInput = document.getElementById('mensaje');
+            const charCount = document.getElementById('charCount');
+
+            mensajeInput.addEventListener('input', () => {
+                const currentLength = mensajeInput.value.length;
+                charCount.textContent = `${currentLength} de 200 caracteres`;
+            });
+        });
+
 
     </script>
 
