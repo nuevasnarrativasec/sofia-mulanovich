@@ -1169,12 +1169,12 @@
                     <input type="number" id="edad" name="edad" required />
                 </div>
                 
-                <div class="box-input-50">
+                <div class="box-input-50 box-input-distrito">
                     <label for="distrito">Distrito:</label>
                     <input type="text" id="distrito" name="distrito" required />
                 </div>               
                 
-                <div class="box-input-50">
+                <div class="box-input-50 box-input-correo">
                     <label for="correo">Correo:</label>
                     <input type="email" id="correo" name="correo" required />
                 </div>
@@ -1893,30 +1893,42 @@
 
             // Cargar mensajes aprobados
             async function loadApprovedMessages() {
-            try {
-                const response = await fetch(API_URL);
-                if (!response.ok) {
-                throw new Error(`Error al cargar los mensajes aprobados: ${response.status}`);
+                try {
+                    const response = await fetch(API_URL);
+                    if (!response.ok) {
+                        throw new Error(`Error al cargar los mensajes aprobados: ${response.status}`);
+                    }
+                    const messages = await response.json();
+                    console.log('Mensajes aprobados:', messages); // Log para depuración
+
+                    const approvedMessagesDiv = document.getElementById('approvedMessages');
+                    approvedMessagesDiv.innerHTML = '';
+
+                    // Define los colores en un array
+                    const colors = [
+                        '#4172cf', '#ebaa52', '#5fa9e2', '#5fa9e2', 
+                        '#4e2093', '#ba0977', '#5495af', '#b8e3fc'
+                    ];
+
+                    // Itera sobre los mensajes y aplica colores cíclicamente
+                    messages.forEach((msg, index) => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.style.backgroundColor = colors[index % colors.length]; // Asigna el color cíclico
+                        messageDiv.innerHTML = `
+                            <h5>${msg.mensaje}</h5>
+                            <div class="box-datos-persona">                                        
+                                <p>${msg.nombre},</p>
+                                <p>${msg.edad},</p>
+                                <p>${msg.distrito}</p>
+                            </div>`;
+                        approvedMessagesDiv.appendChild(messageDiv);
+                    });
+                } catch (error) {
+                    console.error('Error al cargar los mensajes aprobados:', error);
+                    alert('Ocurrió un error al cargar los mensajes aprobados.');
                 }
-                const messages = await response.json();
-                console.log('Mensajes aprobados:', messages); // Agregar un log para revisar los datos
-
-                const approvedMessagesDiv = document.getElementById('approvedMessages');
-                approvedMessagesDiv.innerHTML = '';
-
-                messages.forEach((msg) => {
-                const messageDiv = document.createElement('div');
-                messageDiv.innerHTML = `<p><strong>Mensaje:</strong> ${msg.mensaje}</p>
-                                        <p><strong>Nombre:</strong> ${msg.nombre}</p>
-                                        <p><strong>Edad:</strong> ${msg.edad}</p>
-                                        <p><strong>Distrito:</strong> ${msg.distrito}</p>`;
-                approvedMessagesDiv.appendChild(messageDiv);
-                });
-            } catch (error) {
-                console.error('Error al cargar los mensajes aprobados:', error);
-                alert('Ocurrió un error al cargar los mensajes aprobados.');
             }
-        }
+
 
         // Cargar mensajes al cargar la página
         loadApprovedMessages();

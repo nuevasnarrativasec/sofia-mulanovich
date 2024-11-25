@@ -1710,8 +1710,68 @@ ul.playas{
             text-align: center;
         }
     #approvedMessages{
-        
+        margin: 40px auto 0;
+        max-width: 600px;
+        text-align: center;
     }
+        #approvedMessages div{
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 20px;
+            margin: 0 auto;
+            max-width: 200px;
+            min-width: 200px;
+            min-height: 150px;
+            padding: 10px;
+            vertical-align: top;
+        }
+            #approvedMessages div p{
+                color: #fff;
+                font: 14px/1.1 'Broken Family';
+            }
+            #approvedMessages div h5{
+                color: #fff;
+                font: 19px/1.1 'Broken Family';
+                margin: 0 auto;
+            }
+            .box-main-mensaje #approvedMessages .box-datos-persona{
+                background-color: transparent;
+                height: auto;
+                min-height: auto;   
+                min-width: auto;                
+                padding: 0;
+                width: auto;  
+            }
+                .box-main-mensaje #approvedMessages .box-datos-persona p{
+                    display: inline-block;
+                    margin: 0 auto;
+                }
+            /*#approvedMessages div:nth-child(1){
+                background-color: #4172cf;
+            }
+            #approvedMessages div:nth-child(2){
+                background-color: #ebaa52;
+            }
+            #approvedMessages div:nth-child(3){
+                background-color: #5fa9e2;
+            }
+            #approvedMessages div:nth-child(4){
+                background-color: #5fa9e2;
+            }
+            #approvedMessages div:nth-child(5){
+                background-color: #4e2093;
+            }
+            #approvedMessages div:nth-child(6){
+                background-color: #ba0977;
+            }
+            #approvedMessages div:nth-child(7){
+                background-color: #5495af;
+            }
+            #approvedMessages div:nth-child(8){
+                background-color: #b8e3fc;
+            }*/
+
+            
 
 
 @media only screen and (max-width: 640px) {    
@@ -2135,6 +2195,16 @@ ul.playas{
     .item-10 img.ola{
         left: -5px;
         max-width: 70px;
+    }
+    #messageForm{
+        padding: 0 20px;
+    }
+    .box-input-nombre,
+    .box-input-correo{
+        width: 100%;
+    }
+    .box-input-distrito{
+        width: 80%;
     }
 
 }
