@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v11">
+    <link rel="stylesheet" href="./css/style.css?v12">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -976,7 +976,7 @@
         </div>
 
         <div class="box-bloque-3 box-bloque-opciones" id="box-bloque-3">
-            <h3>
+            <h3 id="trigger-surfer">
                 <img src="./img/icon-opcion-3.png" alt="" width="100%">
                 <div class="clear"></div>
                 el largo camino
@@ -1001,6 +1001,7 @@
                             </div>
                         </li>
                         <li class="item-2">
+                            <img src="./img/ola.png" alt="" width="100%" class="ola">
                             <div class="box-titulo-item">
                                 <div class="box-titulo">
                                     <h6>2004</h6>
@@ -1057,6 +1058,7 @@
                             </div>
                         </li>
                         <li class="item-6">
+                            <img src="./img/ola.png" alt="" width="100%" class="ola">
                             <div class="box-titulo-item">
                                 <div class="box-titulo">
                                     <h6>2012</h6>
@@ -1113,6 +1115,7 @@
                             </div>
                         </li>
                         <li class="item-10">
+                            <img src="./img/ola.png" alt="" width="100%" class="ola">
                             <div class="box-titulo-item">
                                 <div class="box-titulo">
                                     <h6>2021</h6>
@@ -1143,6 +1146,7 @@
                       <div style="clear:both;"></div>
                     </ul>
                 </div>
+                <div class="btn-volver">volver</div>
             </div>
         </div>
 
@@ -1502,6 +1506,22 @@
             .on("leave", function(event) {
                 $(".puntaje-5").addClass("salirPuntaje-5"); 
                 $(".puntaje-5").removeClass("enterPuntaje-5"); 
+            })
+            .addTo(controller);
+
+        // surfer línea de tiempo
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#trigger-surfer",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".surfer").addClass("enterSurfer"); 
+                $(".surfer").removeClass("salirSurfer"); 
+            })
+            .on("leave", function(event) {
+                $(".surfer").addClass("salirSurfer"); 
+                $(".surfer").removeClass("enterSurfer"); 
             })
             .addTo(controller);
 
@@ -1953,6 +1973,18 @@ loadApprovedMessages();
                         }
                     });
                 });
+            });
+        });
+    </script>
+
+    <!-- btn volver timeline -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnVolver = document.querySelector('.btn-volver');
+            const boxMenuOpciones = document.querySelector('#box-menu-opciones');
+
+            btnVolver.addEventListener('click', function () {
+                boxMenuOpciones.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
