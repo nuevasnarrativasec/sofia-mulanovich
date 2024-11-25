@@ -1562,7 +1562,15 @@ ul.playas{
     margin: 30px auto 40px;
     max-width: 300px;
 }
-
+.fslightbox-slide-btn{
+    display: none !important;
+}
+.fslightbox-absoluted{
+    pointer-events: none !important;
+}
+.fslightbox-slide-number-container{
+    opacity: 0;
+}
 @media only screen and (max-width: 640px) {    
 
     #wst{
