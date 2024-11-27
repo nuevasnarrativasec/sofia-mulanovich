@@ -638,6 +638,9 @@
                             “Siempre he vivido en Punta Hermosa, así que siempre he tenido esa conexión especial. Ni siquiera me acuerdo cuando fue la primera vez que me metí porque era tan recurrente, desde siempre”
                         </h6>
                     </div> 
+                    <div class="box-bloque bloque-movil-elemento-15">
+                        <img src="./img/bg-elemento-17.webp" alt="" width="100%" class="bg-elemento-17">
+                    </div>
                     <div class="box-bloque" style="margin-left: 100px; padding: 170px 0 0 50px;">
                         <div class="box-iframe" id="iframe15">
                             <img src="./img/estrella.png" alt="" width="100%" class="">
@@ -657,8 +660,11 @@
                         <p>Lo que sí recuerda es aquella tabla Milton Whilar que le regalaron para una navidad.</p>
                         <h6>“Tenía una florcita y unos colores fosforescentes. Creo que hasta dormimos con la tabla ese día”,</h6>
                         <p> dice emocionada</p>
-                        <h6>“No hay nada más bonito que ver a un niño con tanta conexión con el mar. A mi hijo también le encana y verlo así me encanta”.</h6>
-                    </div>    
+                        <h6>“No hay nada más bonito que ver a un niño con tanta conexión con el mar. A mi hijo también le encanta y verlo así me encanta”.</h6>
+                    </div>  
+                    <div class="box-bloque bloque-movil-elemento-16">
+                        <img src="./img/bg-elemento-18.webp" alt="" width="100%" class="bg-elemento-18">
+                    </div>  
                     <div class="box-bloque" style="margin-left: 150px; max-width: 330px; padding: 250px 0 0 0;">
                         <p>
                             <b>Es Sofía y el mar, la reina Sofía, nuestra ‘Gringa’.</b>
@@ -1722,6 +1728,34 @@
             .on("leave", function(event) {
                 $(".bg-elemento-15").removeClass("moverTabla"); 
                 $(".bg-elemento-16").removeClass("moverTabla"); 
+            })
+            .addTo(controller);
+
+        // castillo 1990
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-1990",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-17").addClass("scaleEstrella"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-17").removeClass("scaleEstrella"); 
+            })
+            .addTo(controller);   
+            
+        // lentes 1990
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-1990",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-18").addClass("rotarSandalias"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-18").removeClass("rotarSandalias"); 
             })
             .addTo(controller);
 
