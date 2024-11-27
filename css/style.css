@@ -1205,7 +1205,7 @@ p.ctn-texto{
                 }    
                 
                 .enterSurfer{
-                    animation: enterSurfer .1s ease-out 0.0s forwards;
+                    animation: enterSurfer 0s ease-out 0.0s forwards;
                 }
                 @keyframes enterSurfer {
                     from {
@@ -1216,7 +1216,7 @@ p.ctn-texto{
                     }
                 }
                 .salirSurfer{
-                    animation: salirSurfer .2s ease-out 0.0s forwards;
+                    animation: salirSurfer 0s ease-out 0.0s forwards;
                 }
                 @keyframes salirSurfer {
                     from {
