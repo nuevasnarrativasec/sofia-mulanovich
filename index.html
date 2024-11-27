@@ -537,6 +537,9 @@
                         </p>
                         <h6>“Me gustaba ganar, performar, pero también estaba encantada con el deporte”.</h6>
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-12">
+                        <img src="./img/bg-elemento-14.webp" alt="" width="100%" class="bg-elemento-14">
+                    </div>
                     <div class="box-bloque" style="padding: 175px 0 0 100px;">
                         <div class="box-iframe" id="iframe13">
                             <img src="./img/estrella.png" alt="" width="100%" class="">
@@ -552,11 +555,17 @@
                             </video>
                         </div>    
                     </div>
-                    <div class="box-bloque bloque-movil-11" style="max-width: 420px; padding: 215px 0 0 50px;">
+                    <div class="box-bloque bloque-movil-elemento-13">
+                        <img src="./img/bg-elemento-15.webp" alt="" width="100%" class="bg-elemento-15">
+                    </div>
+                    <div class="box-bloque bloque-movil-11" style="max-width: 420px; padding: 215px 0 0 0;">
                         <h6>
                             Le diría a esa Sofí niña “qué chévere que haya podido conseguir el título”. “Recuerdo que en un par de años nuevos corría a mi casa a ver videos de surf. Era obsesionada con el deporte, me compraba todas las revistas. Creo que eso pagó”, 
                         </h6>
                         <p>cuenta ahora.</p>
+                    </div>
+                    <div class="box-bloque bloque-movil-elemento-14">
+                        <img src="./img/bg-elemento-16.webp" alt="" width="100%" class="bg-elemento-16">
                     </div>
                     <div class="box-bloque" style="margin-left: 80px; max-width: 390px; padding: 280px 0 0 50px;">
                         <p>
@@ -1683,6 +1692,36 @@
             })
             .on("leave", function(event) {
                 $(".bg-elemento-12").removeClass("scaleEstrella"); 
+            })
+            .addTo(controller);
+
+        // palmera 1996
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-1996",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-14").addClass("rotarSandalias"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-14").removeClass("rotarSandalias"); 
+            })
+            .addTo(controller);
+
+        // hoja palmera
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-1996",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-15").addClass("moverTabla"); 
+                $(".bg-elemento-16").addClass("moverTabla"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-15").removeClass("moverTabla"); 
+                $(".bg-elemento-16").removeClass("moverTabla"); 
             })
             .addTo(controller);
 
