@@ -689,7 +689,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 5400px;
+            width: 5200px;
         }
     #box-horizontal-2021{
         
@@ -1851,8 +1851,8 @@ ul.playas{
     .bloque-movil-elemento-9,
     .bloque-movil-elemento-10,
     .bloque-movil-elemento-11,
-    .bloque-movil-elemento-12,
-    .bloque-movil-elemento-13,
+    .bloque-movil-elemento-12,    
+    .bloque-movil-elemento-13,   
     .bloque-movil-elemento-14,
     .bloque-movil-elemento-15,
     .bloque-movil-elemento-16{
@@ -1862,6 +1862,9 @@ ul.playas{
     .bloque-movil-elemento-4,
     .bloque-movil-elemento-11{
         width: 150px;
+    }
+    .bloque-movil-elemento-13{
+        width: 200px;
     }
         .bg-elemento-1,
         .bg-elemento-2,
