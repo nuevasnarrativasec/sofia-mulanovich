@@ -665,7 +665,7 @@
                     <div class="box-bloque bloque-movil-elemento-16">
                         <img src="./img/bg-elemento-18.webp" alt="" width="100%" class="bg-elemento-18">
                     </div>  
-                    <div class="box-bloque" style="margin-left: 150px; max-width: 330px; padding: 250px 0 0 0;">
+                    <div class="box-bloque" style="margin-left: 0; max-width: 330px; padding: 250px 0 0 0;">
                         <p>
                             <b>Es Sofía y el mar, la reina Sofía, nuestra ‘Gringa’.</b>
                             O mejor como ella misma se gráfica: 
@@ -719,6 +719,10 @@
                 <li id="btn-bloque-3">
                     <img src="./img/icon-opcion-3.png?v2" alt="" width="100%">
                     <p>el largo camino</p>
+                </li>
+                <li id="btn-bloque-4">
+                    <img src="./img/icon-opcion-3.png?v2" alt="" width="100%">
+                    <p>reverencia a la reina</p>
                 </li>
             </ul>
         </div>       
@@ -1200,42 +1204,49 @@
             </div>
         </div>
 
-        <div class="box-main-mensaje">
-            <h3>Déjale un mensaje a Sofía</h3>
-            <form id="messageForm">
-                <label for="mensaje">
-                    Mensaje:                    
-                </label>
-                <textarea id="mensaje" name="mensaje" required maxlength="200" placeholder="Máximo 200 caracteres"></textarea>
-                <p id="charCount">0 de 200 caracteres</p>
-                
-                <div class="box-input-nombre box-input-80">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required />
-                </div>
-                
-                <div class="box-input-50 input-edad">
-                    <label for="edad">Edad:</label>
-                    <input type="number" id="edad" name="edad" required />
-                </div>
-                
-                <div class="box-input-50 box-input-distrito">
-                    <label for="distrito">Distrito:</label>
-                    <input type="text" id="distrito" name="distrito" required />
-                </div>               
-                
-                <div class="box-input-50 box-input-correo">
-                    <label for="correo">Correo:</label>
-                    <input type="email" id="correo" name="correo" required />
-                </div>
-                
-              
-                <button type="submit">Enviar</button>
-              </form>
-              
-              <div id="approvedMessages"></div>
-              
+        <div class="box-bloque-4 box-bloque-opciones" id="box-bloque-4">
+            
+            <div class="box-main-mensaje">
+                <h3>Déjale un mensaje a Sofía</h3>
+                <form id="messageForm">
+                    <label for="mensaje">
+                        Mensaje:                    
+                    </label>
+                    <textarea id="mensaje" name="mensaje" required maxlength="200" placeholder="Máximo 200 caracteres"></textarea>
+                    <p id="charCount">0 de 200 caracteres</p>
+                    
+                    <div class="box-input-nombre box-input-80">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required />
+                    </div>
+                    
+                    <div class="box-input-50 input-edad">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" required />
+                    </div>
+                    
+                    <div class="box-input-50 box-input-distrito">
+                        <label for="distrito">Distrito:</label>
+                        <input type="text" id="distrito" name="distrito" required />
+                    </div>               
+                    
+                    <div class="box-input-50 box-input-correo">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" required />
+                    </div>
+                    
+                  
+                    <button type="submit">Enviar</button>
+                  </form>
+                  
+                  <div id="approvedMessages"></div>
+                  
+            </div>
+
+            
         </div>
+
+        
 
 
         <!--<div class="box-footer">
@@ -2167,13 +2178,13 @@
     <!-- menu opciones -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('#btn-bloque-1, #btn-bloque-2, #btn-bloque-3');
+            const buttons = document.querySelectorAll('#btn-bloque-1, #btn-bloque-2, #btn-bloque-3, #btn-bloque-4');
             const bloques = document.querySelectorAll('.box-bloque-opciones');
             const menuOpciones = document.getElementById('box-menu-opciones');
             const audios = document.querySelectorAll('.box-audio audio');
 
             // Define los desplazamientos de scroll para cada botón
-            const scrollOffsets = [400, 400, 400]; // Ajusta los valores según sea necesario
+            const scrollOffsets = [400, 400, 400, 400]; // Ajusta los valores según sea necesario
 
             // Función para pausar todos los audios
             const pauseAllAudios = () => {
@@ -2196,13 +2207,15 @@
                     bloqueActivo.classList.add('active');
 
                     // Cambiar clase de `box-menu-opciones`
-                    menuOpciones.classList.remove('cyan', 'crema', 'azul');
+                    menuOpciones.classList.remove('cyan', 'crema', 'azul', 'gris');
                     if (index === 0) {
                         menuOpciones.classList.add('cyan');
                     } else if (index === 1) {
                         menuOpciones.classList.add('crema');
                     } else if (index === 2) {
                         menuOpciones.classList.add('azul');
+                    } else if (index === 3) {
+                        menuOpciones.classList.add('gris');
                     }
 
                     // Scroll suave hacia abajo

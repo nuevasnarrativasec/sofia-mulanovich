@@ -743,6 +743,9 @@ p.ctn-texto{
                     .box-menu-opciones ul li:nth-child(3) img{
                         background-color: #26A9E0;
                     }
+                    .box-menu-opciones ul li:nth-child(4) img{
+                        background-color: #75bad8;
+                    }
                 .box-menu-opciones ul li p{
                     font: 22px/1.1 'Broken Family';
                     margin: 0 auto;
@@ -763,6 +766,9 @@ p.ctn-texto{
     }
     .azul {
         background-color: #D6FFFD;
+    }
+    .gris {
+        background-color: #eaf2f6;
     }
     .box-bloque-1{
         background: #EFFAFD;
