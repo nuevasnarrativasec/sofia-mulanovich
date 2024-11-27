@@ -1650,6 +1650,17 @@ ul.playas{
                 .item-7 .box-titulo{
                     margin-left: 50px;
                 }
+                    img.bg-7{
+                        margin-top: 55px !important;
+                        max-width: 240px;
+                        position: relative;
+                    }
+                    img.bg-7-7{
+                        max-width: 240px;
+                        position: absolute;
+                        right: 0;
+                        top: 40px;                            
+                    }
                 .item-8 .box-titulo{
                     margin-left: 215px;
                 }
