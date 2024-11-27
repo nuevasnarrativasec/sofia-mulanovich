@@ -280,6 +280,9 @@
                             Una historia que se respeta.
                         </p>
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-5">
+                        <img src="./img/bg-elemento-6.webp" alt="" width="100%" class="bg-elemento-6">
+                    </div>
                     <div class="box-bloque bloque-movil-5" style="padding: 150px 0 0 200px;">
                         <h5 style="margin: 0; max-width: 350px;">olímpica y respetada</h5>
                         <p style="max-width: 370px; margin: 10px 0;">Se había retirado del circuito profesional en el 2013, pero en el 2019 volvió para tentar la clasificación a Tokio: </p>
@@ -300,6 +303,9 @@
                             </video>
                         </div>   
                         <h6 style="margin: 25px 0 0; max-width: 370px;">“Las chances eran muy pocas, porque la clasificación era por el Mundial 2020, pero se corrió un cupo y pude llegar a las olimpiadas”.</h6>     
+                    </div>
+                    <div class="box-bloque bloque-movil-elemento-6">
+                        <img src="./img/bg-elemento-7.webp" alt="" width="100%" class="bg-elemento-7">
                     </div>
                     <div class="box-bloque bloque-movil-6" style="max-width: 390px; padding: 150px 0 0 0;">
                         <p>En Tsurigasaki, Sofi seguía siendo la reina del surf. </p>
@@ -1585,6 +1591,22 @@
             .on("leave", function(event) {
                 $(".bg-elemento-3").removeClass("moverTabla"); 
                 $(".bg-elemento-5").addClass("moverTabla"); 
+            })
+            .addTo(controller);
+
+        // tabla 2021
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2021",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-6").addClass("moverTabla"); 
+                $(".bg-elemento-7").addClass("moverTabla"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-6").removeClass("moverTabla"); 
+                $(".bg-elemento-7").removeClass("moverTabla"); 
             })
             .addTo(controller);
 

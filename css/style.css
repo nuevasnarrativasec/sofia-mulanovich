@@ -699,7 +699,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 4700px;
+            width: 5400px;
         }
     #box-horizontal-2024{
         
@@ -1816,7 +1816,9 @@ ul.playas{
     .bloque-movil-elemento-1,
     .bloque-movil-elemento-2,
     .bloque-movil-elemento-3,
-    .bloque-movil-elemento-4{
+    .bloque-movil-elemento-4,
+    .bloque-movil-elemento-5,
+    .bloque-movil-elemento-6{
         position: relative;
         width: 400px;
     }
@@ -1827,7 +1829,9 @@ ul.playas{
         .bg-elemento-2,
         .bg-elemento-3,
         .bg-elemento-4,
-        .bg-elemento-5{
+        .bg-elemento-5,
+        .bg-elemento-6,
+        .bg-elemento-7{
             pointer-events: none;        
             position: absolute;             
         }
@@ -1855,6 +1859,16 @@ ul.playas{
             left: -30px;
             max-width: 110px;
             top: 100px;
+        }
+        .bg-elemento-6{
+            left: 80px;
+            max-width: 350px;
+            top: 100px;
+        }
+        .bg-elemento-7{
+            left: -70px;
+            max-width: 375px;
+            top: 75px;
         }
 
 
