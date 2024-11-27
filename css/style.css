@@ -1583,11 +1583,23 @@ ul.playas{
                     margin-left: 215px;
                 }
                     .item-2 img{   
-                        max-width: 400px;
+                        
                     }
+                        img.bg-2{
+                            max-width: 280px;
+                            position: relative;
+                        }
+                        img.bg-2-2{
+                            filter: drop-shadow(2px 4px 6px #add1d1);
+                            max-width: 200px;
+                            position: absolute;
+                            right: 0;
+                            top: 115px;                            
+                        }
                     .item-2 .right_content{
                         box-sizing: border-box;
-                        padding-left: 30px;                    
+                        padding-left: 30px; 
+                        position: relative;                   
                     }
                     .item-2 img.ola,
                     .item-6 img.ola,
