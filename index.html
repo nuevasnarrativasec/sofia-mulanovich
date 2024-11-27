@@ -1954,6 +1954,9 @@
             const menuOpciones = document.getElementById('box-menu-opciones');
             const audios = document.querySelectorAll('.box-audio audio');
 
+            // Define los desplazamientos de scroll para cada botón
+            const scrollOffsets = [400, 400, 400]; // Ajusta los valores según sea necesario
+
             // Función para pausar todos los audios
             const pauseAllAudios = () => {
                 audios.forEach(audio => audio.pause());
@@ -1983,6 +1986,12 @@
                     } else if (index === 2) {
                         menuOpciones.classList.add('azul');
                     }
+
+                    // Scroll suave hacia abajo
+                    window.scrollBy({
+                        top: scrollOffsets[index], // Desplazamiento para el botón clicado
+                        behavior: 'smooth' // Animación de scroll suave
+                    });
                 });
             });
 
@@ -1997,6 +2006,7 @@
                 });
             });
         });
+
     </script>
 
     <!-- pausar audios -->
