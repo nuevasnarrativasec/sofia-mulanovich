@@ -413,6 +413,9 @@
                             Estuvo rodeada de las chicas del circuito, porque sus amigas del colegio que viajaron no pudieron esperar tanto y al octavo día regresaron a Lima. Su familia lo vivió a la distancia: 
                         </p>
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-8">
+                        <img src="./img/bg-elemento-9.webp" alt="" width="100%" class="bg-elemento-9">
+                    </div>
                     <div class="box-bloque box-bloque-video-2">
                         <h6 style="margin-top: 35px; max-width: 400px;">“Preferí las cosas más calmadas, más estar conmigo misma y mis espacios”.</h6>     
                         <div class="box-iframe" id="iframe3" style="margin: 50px 100px;">                            
@@ -428,9 +431,16 @@
                             </video>
                         </div>                           
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-9">
+                        <img src="./img/bg-elemento-10.webp" alt="" width="100%" class="bg-elemento-10">
+                        <img src="./img/bg-elemento-11.webp" alt="" width="100%" class="bg-elemento-11">
+                    </div>
                     <img src="./img/bg-grande-2004.jpg" alt="" width="100%" class="bg-grande-2004">
                     <div class="box-bloque bloque-movil-9">
                         <h6 style="max-width: 400px; padding: 230px 0 0 60px;">“Empecé el año ganando el Mundial ISA en Ecuador y eso me dio mucha confianza. Luego gané mi primer CT en Tavarua (Fiji), en Tahití también lo gané y fue a Francia e hice tres al hilo que me pusieron primera en el ránking”.</h6>
+                    </div>
+                    <div class="box-bloque bloque-movil-elemento-10">
+                        <img src="./img/bg-elemento-12.webp" alt="" width="100%" class="bg-elemento-12">
                     </div>
                     <div class="box-bloque">                        
                         <div class="box-iframe" id="iframe4" style="margin: 150px 100px 0;">                            
@@ -453,12 +463,15 @@
                     </div>
                     <img src="./img/bg-grande-2004-2.webp" alt="" width="100%" class="bg-grande-2004-2">
                     <div class="box-bloque">
-                        <p style="margin: 0 0 10px; max-width: 350px; padding: 160px 0 20px 80px;">
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 160px 0 20px 0;">
                             <b>Fue un cierre de año hermoso para el Perú.</b> ‘Maju’ Mantilla había sido elegida Miss Universo, Perú le había ganado a Chile por las Eliminatorias, Ramón Ferreyros destacaba en el Mundial de Rally y Akio Tamashiro ganaba la medalla de plata en el Mundial de Karate.
                         </p>
-                        <p style="margin: 0 0 10px; max-width: 350px; padding: 0 0 0 80px;">
+                        <p style="margin: 0 0 10px; max-width: 350px; padding: 0 0 0 0;">
                             <b>Hoy, el trofeo de campeona adorna la parte más alta del estante de premios.</b> Ahí, junto a una foto de sus pequeños hijos y la portada de la Revista Surfer (junto a Andy Irons, Dane Reynolds y Kelly Slater), la inmensa copa brilla con el nombre Sofía Mulanovich grabado para siempre, en solo en su placa, en la historia misma.
                         </p>
+                    </div>
+                    <div class="box-bloque bloque-movil-elemento-11">
+                        <img src="./img/bg-elemento-13.webp" alt="" width="100%" class="bg-elemento-13">
                     </div>
                     <div class="separador"></div>
                     <div class="box-menu-interior">
@@ -1624,6 +1637,52 @@
             })
             .on("leave", function(event) {
                 $(".bg-elemento-8").removeClass("scaleEstrella"); 
+            })
+            .addTo(controller);
+
+        // tabla 2004
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2004",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-9").addClass("moverTabla"); 
+                $(".bg-elemento-11").addClass("moverTabla"); 
+                $(".bg-elemento-13").addClass("moverTabla"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-9").removeClass("moverTabla"); 
+                $(".bg-elemento-11").addClass("moverTabla"); 
+                $(".bg-elemento-13").addClass("moverTabla"); 
+            })
+            .addTo(controller);
+
+        // helado
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2004",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-10").addClass("rotarSandalias"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-10").removeClass("rotarSandalias"); 
+            })
+            .addTo(controller);
+
+        // caracol
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2004",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-12").addClass("scaleEstrella"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-12").removeClass("scaleEstrella"); 
             })
             .addTo(controller);
 

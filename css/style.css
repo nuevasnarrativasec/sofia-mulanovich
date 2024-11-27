@@ -333,7 +333,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 7800px;
+            width: 9500px;
         }
         .mar{
             left: -100%;
@@ -1840,11 +1840,16 @@ ul.playas{
     .bloque-movil-elemento-4,
     .bloque-movil-elemento-5,
     .bloque-movil-elemento-6,
-    .bloque-movil-elemento-7{
+    .bloque-movil-elemento-7,
+    .bloque-movil-elemento-8,
+    .bloque-movil-elemento-9,
+    .bloque-movil-elemento-10,
+    .bloque-movil-elemento-11{
         position: relative;
         width: 400px;
     }
-    .bloque-movil-elemento-4{
+    .bloque-movil-elemento-4,
+    .bloque-movil-elemento-11{
         width: 150px;
     }
         .bg-elemento-1,
@@ -1854,7 +1859,12 @@ ul.playas{
         .bg-elemento-5,
         .bg-elemento-6,
         .bg-elemento-7,
-        .bg-elemento-8{
+        .bg-elemento-8,
+        .bg-elemento-9,
+        .bg-elemento-10,
+        .bg-elemento-11,
+        .bg-elemento-12,
+        .bg-elemento-13{
             pointer-events: none;        
             position: absolute;             
         }
@@ -1897,6 +1907,31 @@ ul.playas{
             left: 100px;
             max-width: 250px;
             top: 150px;
+        }
+        .bg-elemento-9{
+            left: 100px;
+            max-width: 150px;
+            top: 50px;
+        }
+        .bg-elemento-10{
+            left: 100px;
+            max-width: 150px;
+            top: 50px;
+        }
+        .bg-elemento-11{
+            left: 155px;
+            max-width: 220px;
+            top: 265px;
+        }
+        .bg-elemento-12{
+            left: 80px;
+            max-width: 220px;
+            top: 135px;
+        }
+        .bg-elemento-13{
+            left: 0;
+            max-width: 220px;
+            top: 35px;
         }
 
 
