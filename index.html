@@ -142,6 +142,10 @@
                         <h6 style="margin: 0; max-width: 355px; padding-left: 40px;">“Les contaré a mis hijos que fui a unos Juegos Olímpicos”,</h6>
                         <p style="max-width: 355px; padding-left: 40px;">asegura y quizás ellos ya lo saben. La camiseta y la credencial cuelgan en la pared de la sala, justo por encima de la silla donde los pequeños se sientan a almorzar. </p>
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-1">
+                        <img src="./img/bg-elemento-1.webp" alt="" width="100%" class="bg-elemento-1">
+                        <img src="./img/bg-elemento-2.webp" alt="" width="100%" class="bg-elemento-2">
+                    </div>
                     <div class="box-bloque box-bloque-video">
                         <div class="box-iframe" id="iframe6" style="padding: 150px 0 0 120px;">                            
                             <video 
@@ -167,9 +171,15 @@
                         <h6 style="max-width: 380px; padding: 0 0 0 40px;">“Surfear una ola con mi hijo es un sentimiento alucinante”,</h6>
                         <p style="margin: 10px 0;  padding: 0 0 0 40px;"> asegura, y se emociona.</p>
                     </div>
+                    <div class="box-bloque bloque-movil-elemento-2">
+                        <img src="./img/bg-elemento-3.webp" alt="" width="100%" class="bg-elemento-3">
+                    </div>
                     <div class="box-bloque bloque-movil-3">
-                        <h5 style="margin: 0; max-width:350px; padding: 200px 0 0 250px;">motivación profesional</h5>
-                        <p style="max-width: 380px; padding: 0 0 0 250px;">Basada en cinco pilares, Sofía actualmente dicta charlas motivacionales a distintas empresas que la requieran y lo hace en base a una similitud natural: </p>
+                        <h5 style="margin: 0; max-width:350px; padding: 200px 0 0 0;">motivación profesional</h5>
+                        <p style="max-width: 380px; padding: 0 0 0 0;">Basada en cinco pilares, Sofía actualmente dicta charlas motivacionales a distintas empresas que la requieran y lo hace en base a una similitud natural: </p>
+                    </div>
+                    <div class="box-bloque bloque-movil-elemento-3">
+                        <img src="./img/bg-elemento-4.webp" alt="" width="100%" class="bg-elemento-4">
                     </div>
                     <div class="box-bloque box-bloque-video-especial" style="padding: 0 150px;">
                         <h6 style="margin: 0; max-width: 335px; padding: 100px 0 0 0">“Tanto el mar como la vida están en constante movimiento”,</h6>     
@@ -196,6 +206,9 @@
                             responde y los motiva en cada encuentro. Atiende sus negocios personales y cuando la llaman, es comentarista para la WSL (World Surfing League) y para la ISA (International Surfing Assosiation), donde ha derramado lágrimas con los logros peruanos.
                         </p>
                     </div>  
+                    <div class="box-bloque bloque-movil-elemento-4">
+                        <img src="./img/bg-elemento-5.webp" alt="" width="100%" class="bg-elemento-5">
+                    </div>
                     <div class="separador"></div>
                     <div class="box-menu-interior">
                         <div class="box-indicacion-menu">
@@ -1538,6 +1551,40 @@
             .on("leave", function(event) {
                 $(".surfer").addClass("salirSurfer"); 
                 $(".surfer").removeClass("enterSurfer"); 
+            })
+            .addTo(controller);
+
+        // sandalias
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2024",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-1").addClass("rotarSandalias"); 
+                $(".bg-elemento-2").addClass("rotarSandalias"); 
+                $(".bg-elemento-4").addClass("rotarSandalias"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-1").removeClass("rotarSandalias"); 
+                $(".bg-elemento-2").removeClass("rotarSandalias"); 
+                $(".bg-elemento-4").addClass("rotarSandalias"); 
+            })
+            .addTo(controller);
+
+        // tabla
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2024",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $(".bg-elemento-3").addClass("moverTabla"); 
+                $(".bg-elemento-5").addClass("moverTabla"); 
+            })
+            .on("leave", function(event) {
+                $(".bg-elemento-3").removeClass("moverTabla"); 
+                $(".bg-elemento-5").addClass("moverTabla"); 
             })
             .addTo(controller);
 

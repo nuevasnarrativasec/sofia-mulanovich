@@ -647,7 +647,7 @@ p.ctn-texto{
                 background: #26A9E0;
                 display: inline-block;
                 height: 100%;
-                margin: 0 40px 0 90px;
+                margin: 0 40px 0 35px;
                 vertical-align: top;
                 width: 1px;
             }
@@ -709,7 +709,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 5600px;
+            width: 6600px;
         }        
             
 .box-cyan,
@@ -1218,6 +1218,48 @@ p.ctn-texto{
                     }
                     to {
                         opacity: 0;
+                    }
+                }
+
+                .rotarSandalias{
+                    animation: rotarSandalias 3s ease-out 0.0s infinite;
+                }
+                @keyframes rotarSandalias {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    25% {
+                        transform: rotate(10deg);
+                    }
+                    50% {
+                        transform: rotate(0deg);
+                    }
+                    75% {
+                        transform: rotate(-10deg);
+                    }
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .moverTabla{
+                    animation: moverTabla 3s ease-out 0.0s infinite;
+                }
+                @keyframes moverTabla {
+                    0% {
+                        transform: translate(0,0);
+                    }
+                    25% {
+                        transform: translate(0,20px);
+                    }
+                    50% {
+                        transform: translate(0,0);
+                    }
+                    75% {
+                        transform: translate(0,-20px);
+                    }
+                    0% {
+                        transform: translate(0,0);
                     }
                 }
 
@@ -1771,7 +1813,49 @@ ul.playas{
                 background-color: #b8e3fc;
             }*/
 
-            
+    .bloque-movil-elemento-1,
+    .bloque-movil-elemento-2,
+    .bloque-movil-elemento-3,
+    .bloque-movil-elemento-4{
+        position: relative;
+        width: 400px;
+    }
+    .bloque-movil-elemento-4{
+        width: 150px;
+    }
+        .bg-elemento-1,
+        .bg-elemento-2,
+        .bg-elemento-3,
+        .bg-elemento-4,
+        .bg-elemento-5{
+            pointer-events: none;        
+            position: absolute;             
+        }
+        .bg-elemento-1{ 
+            left: 45px;
+            max-width: 180px;              
+            top: 135px;            
+        }
+        .bg-elemento-2{
+            left: 185px;
+            max-width: 190px;
+            top: 255px;            
+        }
+        .bg-elemento-3{
+            left: 80px;
+            max-width: 250px;
+            top: 85px;      
+        }
+        .bg-elemento-4{
+            left: 80px;
+            max-width: 250px;
+            top: 130px;      
+        }
+        .bg-elemento-5{
+            left: -30px;
+            max-width: 110px;
+            top: 100px;
+        }
 
 
 @media only screen and (max-width: 640px) {    
