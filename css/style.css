@@ -658,7 +658,7 @@ p.ctn-texto{
                 vertical-align: top;
             }
             .separador{
-                background: #26A9E0;
+                background: #fff;
                 display: inline-block;
                 height: 100%;
                 margin: 0 40px 0 35px;
@@ -677,14 +677,35 @@ p.ctn-texto{
                 padding: 0;
             }
                 .box-menu-interior ul li{
+                    cursor: pointer;
                     max-width: 240px;
                 }
                     .box-menu-interior ul li img{
                         cursor: pointer;
                         margin-bottom: 20px;
-                        max-width: 100%;
+                        max-width: 65px;
                         width: 100%;
                     }
+            .box-texto-btn-interior{
+                display: inline-block;
+                margin: 5px 10px 0;
+                text-align: center;
+                vertical-align: top;
+            }
+                .box-texto-btn-interior h6{
+                    color: #000;
+                    font: 22px/1 'Broken Family';
+                    margin: 0 auto 3px;
+                }
+                .box-texto-btn-interior p{
+                    border: 1px solid #000;
+                    border-radius: 20px;
+                    color: #000;
+                    font: 13px/1 'Broken Family';
+                    margin: 0 auto;
+                    padding: 5px 10px;
+                    text-align: center;
+                }
      #box-horizontal-1990{
         
     }
