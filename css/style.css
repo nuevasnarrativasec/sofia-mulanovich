@@ -755,7 +755,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 7050px;
+            width: 6850px;
         }        
             
 .box-cyan,
@@ -2079,7 +2079,7 @@ ul.playas{
             top: 130px;      
         }
         .bg-elemento-5{
-            left: 50px;
+            left: 0;
             max-width: 110px;
             top: 150px;
         }
