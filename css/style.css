@@ -2125,7 +2125,7 @@ ul.playas{
         }
 
         .box-footer{
-            background-size: 100%;
+            background-color: #fff;
             padding: 70px 0 20px;
             position: relative;
             text-align: center;
@@ -2397,7 +2397,7 @@ ul.playas{
         margin-bottom: 20px;
     }
     .box-bloque-1 {
-        padding: 0 20px;
+        padding: 0 20px 20px;
     }
     .main-movimientos{
         margin-bottom: 40px;
