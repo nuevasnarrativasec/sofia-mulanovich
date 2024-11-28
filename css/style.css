@@ -839,6 +839,7 @@ p.ctn-texto{
             text-align: center;
         }
         .box-bloque-4 .ctn-texto{
+            margin-bottom: 60px;
             max-width: 500px;
         }
         .main-movimientos{
