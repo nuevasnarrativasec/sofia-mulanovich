@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v22">
+    <link rel="stylesheet" href="./css/style.css?v23">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -2394,13 +2394,30 @@
                     messages.forEach((msg, index) => {
                         const messageDiv = document.createElement('div');
                         messageDiv.style.backgroundColor = colors[index % colors.length]; // Asigna el color cíclico
-                        messageDiv.innerHTML = `
-                            <h5>${msg.mensaje}</h5>
-                            <div class="box-datos-persona">                                        
-                                <p>${msg.nombre},</p>
-                                <p>${msg.edad},</p>
-                                <p>${msg.distrito}</p>
-                            </div>`;
+
+                        // Crear el elemento h5
+                        const messageH5 = document.createElement('h5');
+                        messageH5.textContent = msg.mensaje;
+
+                        // Verificar si el mensaje tiene exactamente 100 caracteres
+                        if (msg.mensaje.length <= 100) {
+                            messageH5.classList.add('mensaje-corto'); // Añadir clase si tiene 100 caracteres
+                        }
+
+                        // Crear la caja de datos personales
+                        const boxDatosPersona = document.createElement('div');
+                        boxDatosPersona.classList.add('box-datos-persona');
+                        boxDatosPersona.innerHTML = `
+                            <p>${msg.nombre},</p>
+                            <p>${msg.edad},</p>
+                            <p>${msg.distrito}</p>
+                        `;
+
+                        // Añadir el h5 y los datos personales al div del mensaje
+                        messageDiv.appendChild(messageH5);
+                        messageDiv.appendChild(boxDatosPersona);
+
+                        // Añadir el mensaje al contenedor principal
                         approvedMessagesDiv.appendChild(messageDiv);
                     });
                 } catch (error) {
@@ -2408,6 +2425,7 @@
                     alert('Ocurrió un error al cargar los mensajes aprobados.');
                 }
             }
+
 
 
         // Cargar mensajes al cargar la página
