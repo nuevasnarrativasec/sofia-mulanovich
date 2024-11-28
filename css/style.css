@@ -1837,7 +1837,7 @@ ul.playas{
             text-align: center;
         }
     .box-main-mensajes-aprobados{
-        height: 465px;
+        height: 620px;
         overflow-x: scroll;
         overflow-y: hidden;
         width: 100%;
@@ -1872,39 +1872,45 @@ ul.playas{
             max-width: 200px;
         }
         #approvedMessages{
-            height: 465px;
+            height: 610px;
             margin: 0 auto;            
             padding-bottom: 20px;
             text-align: left;
-            width: 2600px;
+            width: 3000px;
         }
             #approvedMessages div{
                 box-sizing: border-box;
                 display: inline-block;
                 margin: 20px;
                 margin: 0 auto;
-                max-width: 200px;
-                min-width: 200px;
-                min-height: 150px;
+                max-width: 230px;
+                min-width: 230px;
+                min-height: 203px;
                 padding: 10px;
+                position: relative;
+                text-align: center;
                 vertical-align: top;
             }
                 #approvedMessages div p{
                     color: #fff;
-                    font: 14px/1.1 'Broken Family';
+                    font: 14px/1.1 'prelomedium';
                 }
                 #approvedMessages div h5{
                     color: #fff;
-                    font: 19px/1.1 'Broken Family';
+                    font: 14px/1.1 'preloextrabold';
                     margin: 0 auto;
+                    text-transform: uppercase;
                 }
                 .box-main-mensaje #approvedMessages .box-datos-persona{
                     background-color: transparent;
+                    bottom: 3px;
                     height: auto;
-                    min-height: auto;   
-                    min-width: auto;                
-                    padding: 0;
-                    width: auto;  
+                    left: 0;
+                    min-height: auto;
+                    min-width: auto;
+                    padding: 0 10px;
+                    position: absolute;
+                    width: 100%;                       
                 }
                     .box-main-mensaje #approvedMessages .box-datos-persona p{
                         display: inline-block;
