@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v18">
+    <link rel="stylesheet" href="./css/style.css?v20">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -113,7 +113,7 @@
         <div class="box-horizontal scrollable" id="box-horizontal-2024">
             <div class="ctn-box-horizontal">
                 <div class="ancla"></div>
-                <div class="box-ctn-titular">
+                <div class="box-ctn-titular" id="ctn-titular-1">
                     <h3>madre, guía e inspiración</h3>
                     <img src="./img/icon-deslizar-2.png" alt="" width="100%">
                     <h4>2024</h4>
@@ -1990,6 +1990,22 @@
             })
             .on("leave", function(event) {
                 $(".bg-elemento-18").removeClass("rotarSandalias"); 
+            })
+            .addTo(controller);
+
+        // ctn-titular-1
+        var controller = new ScrollMagic.Controller();       
+        new ScrollMagic.Scene({
+            triggerElement: "#box-horizontal-2024",
+            triggerHook: 0.5,
+        })
+            .on("enter", function(event) {
+                $("#ctn-titular-1").addClass("enterOpacityBoxTitular"); 
+                $("#ctn-titular-1").removeClass("salirOpacityBoxTitular"); 
+            })
+            .on("leave", function(event) {
+                $("#ctn-titular-1").removeClass("enterOpacityBoxTitular"); 
+                $("#ctn-titular-1").addClass("salirOpacityBoxTitular"); 
             })
             .addTo(controller);
 

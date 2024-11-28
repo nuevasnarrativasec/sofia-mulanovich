@@ -610,6 +610,7 @@ p.ctn-texto{
         }
         #box-horizontal-2024 .box-ctn-titular{
             max-width: 455px;
+            opacity: 0;
         }
         #box-horizontal-1990 .box-ctn-titular{
             max-width: 250px;
@@ -816,8 +817,8 @@ p.ctn-texto{
         background-color: #fafff8;
     }
     .box-bloque-1{
-        background: #EFFAFD;
-        padding-top: 80px;
+        background: #EFFAFD;        
+        padding: 80px 0;
     }
     .box-bloque-2{
         background: #FFF7E6;
@@ -1353,6 +1354,30 @@ p.ctn-texto{
                     }
                     0% {
                         transform: scale(1)
+                    }
+                }
+
+
+                .enterOpacityBoxTitular {
+                    animation: enterOpacityBoxTitular .8s ease-out 2s forwards;
+                }
+                @keyframes enterOpacityBoxTitular {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+                .salirOpacityBoxTitular {
+                    animation: salirOpacityBoxTitular .2s ease-out 0s forwards;
+                }
+                @keyframes salirOpacityBoxTitular {
+                    from {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
                     }
                 }
 
