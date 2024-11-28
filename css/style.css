@@ -1835,67 +1835,104 @@ ul.playas{
             padding: 10px 15px;
             text-align: center;
         }
-    #approvedMessages{
-        margin: 0 auto;
-        max-width: 600px;
-        text-align: center;
+    .box-main-mensajes-aprobados{
+        height: 465px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 100%;
+      
+        /*scroll-behavior: smooth; */
+        scrollbar-width: thin; 
+        scrollbar-color: #BB0977 #f8f8f8; /* Color del scroll y el fondo */
     }
-        #approvedMessages div{
-            box-sizing: border-box;
-            display: inline-block;
-            margin: 20px;
-            margin: 0 auto;
+   
+    .box-main-mensajes-aprobados::-webkit-scrollbar {
+        height: 8px; 
+    }
+
+    .box-main-mensajes-aprobados::-webkit-scrollbar-track {
+        background: #e0e0e0; /* Color de fondo del track */
+        border-radius: 4px;
+    }
+
+    .box-main-mensajes-aprobados::-webkit-scrollbar-thumb {
+        background-color: #BB0977; /* Color del scroll */
+        border-radius: 4px;
+        border: 1px solid #ffffff; /* Borde del scroll */
+    }
+
+    .box-main-mensajes-aprobados::-webkit-scrollbar-thumb:hover {
+        background-color: #BB0977; /* Color al pasar el mouse */
+    }
+
+        img.bg-icon-desliza{
+            display: block;
+            margin: 0 auto 10px;
             max-width: 200px;
-            min-width: 200px;
-            min-height: 150px;
-            padding: 10px;
-            vertical-align: top;
         }
-            #approvedMessages div p{
-                color: #fff;
-                font: 14px/1.1 'Broken Family';
-            }
-            #approvedMessages div h5{
-                color: #fff;
-                font: 19px/1.1 'Broken Family';
+        #approvedMessages{
+            height: 465px;
+            margin: 0 auto;            
+            padding-bottom: 20px;
+            text-align: left;
+            width: 2600px;
+        }
+            #approvedMessages div{
+                box-sizing: border-box;
+                display: inline-block;
+                margin: 20px;
                 margin: 0 auto;
+                max-width: 200px;
+                min-width: 200px;
+                min-height: 150px;
+                padding: 10px;
+                vertical-align: top;
             }
-            .box-main-mensaje #approvedMessages .box-datos-persona{
-                background-color: transparent;
-                height: auto;
-                min-height: auto;   
-                min-width: auto;                
-                padding: 0;
-                width: auto;  
-            }
-                .box-main-mensaje #approvedMessages .box-datos-persona p{
-                    display: inline-block;
+                #approvedMessages div p{
+                    color: #fff;
+                    font: 14px/1.1 'Broken Family';
+                }
+                #approvedMessages div h5{
+                    color: #fff;
+                    font: 19px/1.1 'Broken Family';
                     margin: 0 auto;
                 }
-            /*#approvedMessages div:nth-child(1){
-                background-color: #4172cf;
-            }
-            #approvedMessages div:nth-child(2){
-                background-color: #ebaa52;
-            }
-            #approvedMessages div:nth-child(3){
-                background-color: #5fa9e2;
-            }
-            #approvedMessages div:nth-child(4){
-                background-color: #5fa9e2;
-            }
-            #approvedMessages div:nth-child(5){
-                background-color: #4e2093;
-            }
-            #approvedMessages div:nth-child(6){
-                background-color: #ba0977;
-            }
-            #approvedMessages div:nth-child(7){
-                background-color: #5495af;
-            }
-            #approvedMessages div:nth-child(8){
-                background-color: #b8e3fc;
-            }*/
+                .box-main-mensaje #approvedMessages .box-datos-persona{
+                    background-color: transparent;
+                    height: auto;
+                    min-height: auto;   
+                    min-width: auto;                
+                    padding: 0;
+                    width: auto;  
+                }
+                    .box-main-mensaje #approvedMessages .box-datos-persona p{
+                        display: inline-block;
+                        margin: 0 auto;
+                    }
+                /*#approvedMessages div:nth-child(1){
+                    background-color: #4172cf;
+                }
+                #approvedMessages div:nth-child(2){
+                    background-color: #ebaa52;
+                }
+                #approvedMessages div:nth-child(3){
+                    background-color: #5fa9e2;
+                }
+                #approvedMessages div:nth-child(4){
+                    background-color: #5fa9e2;
+                }
+                #approvedMessages div:nth-child(5){
+                    background-color: #4e2093;
+                }
+                #approvedMessages div:nth-child(6){
+                    background-color: #ba0977;
+                }
+                #approvedMessages div:nth-child(7){
+                    background-color: #5495af;
+                }
+                #approvedMessages div:nth-child(8){
+                    background-color: #b8e3fc;
+                }*/
 
     .bloque-movil-elemento-1,
     .bloque-movil-elemento-2,

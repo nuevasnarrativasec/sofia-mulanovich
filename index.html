@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v15">
+    <link rel="stylesheet" href="./css/style.css?v16">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -1258,8 +1258,11 @@
             </p>
 
             <div class="box-main-mensaje">
-
-                <div id="approvedMessages"></div>
+                <img src="./img/icon-deslizar-3.png" alt="" width="100%" class="bg-icon-desliza">
+                <div class="box-main-mensajes-aprobados scrollable">
+                    
+                    <div id="approvedMessages" class=""></div>
+                </div>                
                 
                 <form id="messageForm">
                     <label for="mensaje">
@@ -2180,8 +2183,8 @@
 
                     // Define los colores en un array
                     const colors = [
-                        '#4172cf', '#ebaa52', '#5fa9e2', '#5fa9e2', 
-                        '#4e2093', '#ba0977', '#5495af', '#b8e3fc'
+                        '#4172cf', '#ebaa52', '#5fa9e2', '#5fa9e2', '#248e7e',
+                        '#4e2093', '#ba0977', '#5495af', '#248e7e', '#166494'
                     ];
 
                     // Itera sobre los mensajes y aplica colores cíclicamente
