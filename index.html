@@ -1008,6 +1008,8 @@
                     </div>
                 </div>
 
+                <div class="btn-volver volver-formulario">volver</div>
+
 
         </div> 
 
@@ -1056,6 +1058,8 @@
                 <img src="./img/bg-audio.webp" alt="" width="100%">
                 <audio src="./audio/audio-2.mp3" controls></audio>
             </div>
+
+            <div class="btn-volver volver-formulario">volver</div>
 
         </div>
 
@@ -1292,7 +1296,9 @@
                     </div>                    
                   
                     <button type="submit">Enviar</button>
-                </form>                   
+                </form> 
+                
+                <div class="btn-volver volver-formulario">volver</div>
             </div>
         </div>        
 
@@ -2309,11 +2315,13 @@
     <!-- btn volver timeline -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const btnVolver = document.querySelector('.btn-volver');
+            const btnVolver = document.querySelectorAll('.btn-volver');
             const boxMenuOpciones = document.querySelector('#box-menu-opciones');
 
-            btnVolver.addEventListener('click', function () {
-                boxMenuOpciones.scrollIntoView({ behavior: 'smooth' });
+            btnVolver.forEach(button => {
+                button.addEventListener('click', function () {
+                    boxMenuOpciones.scrollIntoView({ behavior: 'smooth' });
+                });
             });
         });
     </script>

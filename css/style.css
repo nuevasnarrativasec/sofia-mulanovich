@@ -1732,6 +1732,9 @@ ul.playas{
         padding: 10px;
         text-align: center;
     }
+        .volver-formulario{
+            margin-top: 60px;
+        }
 
 #trigger-surfer{
     background: #d6fffd;
@@ -1897,7 +1900,7 @@ ul.playas{
                 }
                 #approvedMessages div h5{
                     color: #fff;
-                    font: 14px/1.1 'preloextrabold';
+                    font: 14px/1.3 'preloextrabold';
                     margin: 0 auto;
                     text-transform: uppercase;
                 }
