@@ -2677,6 +2677,9 @@ ul.playas{
     span.separador-footer{
        display: none;
     }
+    #approvedMessages{
+        text-align: center;
+    }
 
 }
 
