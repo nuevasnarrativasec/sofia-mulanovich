@@ -771,7 +771,7 @@ p.ctn-texto{
         background-color: #D6FFFD;
     }
     .gris {
-        background-color: #eaf2f6;
+        background-color: #fafff8;
     }
     .box-bloque-1{
         background: #EFFAFD;
@@ -1763,7 +1763,7 @@ ul.playas{
     }
     #messageForm{
         box-sizing: border-box;
-        margin: 0 auto;
+        margin: 50px auto 0;
         max-width: 400px;
     }
         #messageForm label{
@@ -1789,7 +1789,7 @@ ul.playas{
             border-radius: 5px;
             box-sizing: border-box;
             font: 16px/1.2 'prelobook';
-            min-height: 80px;
+            min-height: 130px;
             padding: 5px;
             width: 100%;
         }
