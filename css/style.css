@@ -667,6 +667,7 @@ p.ctn-texto{
             }
         .box-menu-interior{
             display: inline-block;
+            transform: translate(0, 10%);
             vertical-align: top;
         }
             .box-menu-interior .box-indicacion-menu{
@@ -706,6 +707,15 @@ p.ctn-texto{
                     padding: 5px 10px;
                     text-align: center;
                 }
+            .btn-secciones{
+                background-color: #26A9E0;
+                border-radius: 22px;
+                color: #fff;
+                cursor: pointer;
+                font: 14px/1 'Broken Family';
+                padding: 10px;
+                text-align: center;
+            }
      #box-horizontal-1990{
         
     }
