@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v23">
+    <link rel="stylesheet" href="./css/style.css?v25">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -1377,6 +1377,7 @@
                 <div class="box-main-mensajes-aprobados scrollable">
                     
                     <div id="approvedMessages" class=""></div>
+                    <button id="verMasMensajes">Ver más mensajes</button>
                 </div>                
                 
                 <form id="messageForm">
@@ -2381,6 +2382,7 @@
                     console.log('Mensajes aprobados:', messages); // Log para depuración
 
                     const approvedMessagesDiv = document.getElementById('approvedMessages');
+                    const verMasButton = document.getElementById('verMasMensajes'); // Botón para ver más mensajes
                     approvedMessagesDiv.innerHTML = '';
 
                     // Colores de cajas de mensajes
@@ -2390,56 +2392,74 @@
                         '#c88346', '#c8b746', '#9e3f2d'
                     ];
 
-                    // Itera sobre los mensajes y aplica colores cíclicamente
-                    messages.forEach((msg, index) => {
-                        const messageDiv = document.createElement('div');
-                        messageDiv.style.backgroundColor = colors[index % colors.length]; // Asigna el color cíclico
+                    let displayedCount = 0; // Contador de mensajes mostrados inicialmente
+                    const messagesPerPage = 9; // Cantidad inicial de mensajes a mostrar
 
-                        // Crear el elemento h5
-                        const messageH5 = document.createElement('h5');
-                        messageH5.textContent = msg.mensaje;
+                    // Función para mostrar mensajes
+                    function showMessages() {
+                        const end = Math.min(displayedCount + messagesPerPage, messages.length);
+                        for (let i = displayedCount; i < end; i++) {
+                            const msg = messages[i];
+                            const messageDiv = document.createElement('div');
+                            messageDiv.style.backgroundColor = colors[i % colors.length]; // Asigna el color cíclico
 
-                        // Verificar si el mensaje tiene exactamente 100 caracteres
-                        if (msg.mensaje.length <= 100) {
-                            messageH5.classList.add('mensaje-corto'); // Añadir clase si tiene 100 caracteres
+                            // Crear el elemento h5
+                            const messageH5 = document.createElement('h5');
+                            messageH5.textContent = msg.mensaje;
+
+                            // Verificar si el mensaje tiene exactamente 100 caracteres
+                            if (msg.mensaje.length <= 100) {
+                                messageH5.classList.add('mensaje-corto'); // Añadir clase si tiene <= 100 caracteres
+                            }
+
+                            // Crear la caja de datos personales
+                            const boxDatosPersona = document.createElement('div');
+                            boxDatosPersona.classList.add('box-datos-persona');
+                            boxDatosPersona.innerHTML = `
+                                <p>${msg.nombre},</p>
+                                <p>${msg.edad},</p>
+                                <p>${msg.distrito}</p>
+                            `;
+
+                            // Añadir el h5 y los datos personales al div del mensaje
+                            messageDiv.appendChild(messageH5);
+                            messageDiv.appendChild(boxDatosPersona);
+
+                            // Añadir el mensaje al contenedor principal
+                            approvedMessagesDiv.appendChild(messageDiv);
                         }
+                        displayedCount = end;
 
-                        // Crear la caja de datos personales
-                        const boxDatosPersona = document.createElement('div');
-                        boxDatosPersona.classList.add('box-datos-persona');
-                        boxDatosPersona.innerHTML = `
-                            <p>${msg.nombre},</p>
-                            <p>${msg.edad},</p>
-                            <p>${msg.distrito}</p>
-                        `;
+                        // Ocultar el botón si no hay más mensajes por mostrar
+                        if (displayedCount >= messages.length) {
+                            verMasButton.style.display = 'none';
+                        }
+                    }
 
-                        // Añadir el h5 y los datos personales al div del mensaje
-                        messageDiv.appendChild(messageH5);
-                        messageDiv.appendChild(boxDatosPersona);
+                    // Mostrar los primeros mensajes al cargar
+                    showMessages();
 
-                        // Añadir el mensaje al contenedor principal
-                        approvedMessagesDiv.appendChild(messageDiv);
-                    });
+                    // Manejar el botón "ver más mensajes"
+                    verMasButton.addEventListener('click', showMessages);
                 } catch (error) {
                     console.error('Error al cargar los mensajes aprobados:', error);
                     alert('Ocurrió un error al cargar los mensajes aprobados.');
                 }
             }
 
+            // Cargar mensajes al cargar la página
+            loadApprovedMessages();
 
+            document.addEventListener('DOMContentLoaded', () => {
+                const mensajeInput = document.getElementById('mensaje');
+                const charCount = document.getElementById('charCount');
 
-        // Cargar mensajes al cargar la página
-        loadApprovedMessages();
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const mensajeInput = document.getElementById('mensaje');
-            const charCount = document.getElementById('charCount');
-
-            mensajeInput.addEventListener('input', () => {
-                const currentLength = mensajeInput.value.length;
-                charCount.textContent = `${currentLength} de 200 caracteres`;
+                mensajeInput.addEventListener('input', () => {
+                    const currentLength = mensajeInput.value.length;
+                    charCount.textContent = `${currentLength} de 200 caracteres`;
+                });
             });
-        });
+
 
 
     </script>

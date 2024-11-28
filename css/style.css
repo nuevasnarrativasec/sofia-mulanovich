@@ -2188,6 +2188,21 @@ ul.playas{
     line-height: 27px;
     transform: translate(0, 40px);
 }
+#verMasMensajes {
+    background-color: #fff;
+    border: 1px solid #c2c2c2;
+    border-radius: 32px;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font: 16px / 1.1 'Broken Family';
+    margin: 20px auto;
+    padding: 10px 20px;  
+}
+    #verMasMensajes:hover {
+        background-color: #4d2093;
+        color: #fff;
+    }
 
 
 
