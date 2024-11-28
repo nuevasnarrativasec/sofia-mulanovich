@@ -180,6 +180,9 @@ p.ctn-texto{
     .color-celeste{
         color: #26A9E0;
     }
+    .center{
+        text-align: center;
+    }
 .box-menu{
     margin-top: 80px;
 }
@@ -744,7 +747,7 @@ p.ctn-texto{
                         background-color: #26A9E0;
                     }
                     .box-menu-opciones ul li:nth-child(4) img{
-                        background-color: #75bad8;
+                        background-color: #cbf5e6;
                     }
                 .box-menu-opciones ul li p{
                     font: 22px/1.1 'Broken Family';
@@ -782,9 +785,14 @@ p.ctn-texto{
         background: #D6FFFD;
         padding: 80px 0;
     }
+    .box-bloque-4{
+        background: #fafff8;
+        padding: 80px 0;
+    }
         .box-bloque-1 h3,
         .box-bloque-2 h3,
-        .box-bloque-3 h3{
+        .box-bloque-3 h3,
+        .box-bloque-4 h3{
             border-bottom: 1px solid #000;
             border-top: 1px solid #000;
             font: 36px/1.1 'Broken Family';
@@ -809,14 +817,29 @@ p.ctn-texto{
                 margin-top: -50px;           
                 max-width: 100px;       
             }
+            .box-bloque-4 h3 img{
+                background-color: #fafff8;
+                margin-top: -50px;           
+                max-width: 100px;       
+            }
         .box-bloque-1 h4,
         .box-bloque-2 h4,
-        .box-bloque-3 h4{
+        .box-bloque-3 h4,
+        .box-bloque-4 h4{
             font: 24px/1.1 'Broken Family';
             margin: 0 auto 10px;
             max-width: 400px;
             position: relative;
             text-align: center;
+        }
+        .box-bloque-4 h5{
+            font:  22px/1.2 'preloextrabold';
+            margin: 0 auto 20px;
+            max-width: 250px;
+            text-align: center;
+        }
+        .box-bloque-4 .ctn-texto{
+            max-width: 500px;
         }
         .main-movimientos{
             text-align: center;
@@ -1730,7 +1753,7 @@ ul.playas{
 }
 
 .box-main-mensaje{
-    background-color: #eaf2f6;
+    background-color: #fafff8;
 }
     .box-main-mensaje h3{
         font: 22px / 1.1 'Broken Family';
