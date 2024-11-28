@@ -2145,6 +2145,8 @@ ul.playas{
         }
 
         .box-footer{
+            background: url('../img/bg-footer.jpg') no-repeat center top;
+            background-size: cover;
             background-color: #fff;
             padding: 70px 0 20px;
             position: relative;
