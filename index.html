@@ -55,10 +55,16 @@
             <button id="tw" class="sharer button" data-sharer="twitter" data-title="DT | El Comercio" data-hashtags="" data-via="elcomercio_peru" data-url="#">Twitter</button>
         </div>
 
-        <div class="main-portada">            
-            <div class="btn-intro">
-                <p>20 años navegando sueños</p>
-            </div>
+        <div class="main-portada">    
+            <div class="box-btn-intro">
+                <div class="btn-intro">
+                    <p>20 años navegando sueños</p>
+                </div>
+                <div class="btn-intro btn-reverencia" id="btn-reverencia">
+                    <p>reverencia a la reina</p>
+                </div>
+            </div>       
+            
             <video id="portada" src="./video/portada-desktop-2.mp4" width="100%" muted autoplay loop playsinline></video>
             <video id="portada-movil" src="./video/portada-movil-2.mp4" width="100%" muted autoplay loop playsinline></video>
         </div>       
@@ -1249,7 +1255,7 @@
 
         <div class="box-bloque-4 box-bloque-opciones" id="box-bloque-4">
 
-            <h3>
+            <h3 id="trigger-bloque-4">
                 <img src="./img/icon-opcion-4.png" alt="" width="100%">
                 <div class="clear"></div>
                 reverencia a la reina
@@ -2236,6 +2242,7 @@
             const bloques = document.querySelectorAll('.box-bloque-opciones');
             const menuOpciones = document.getElementById('box-menu-opciones');
             const audios = document.querySelectorAll('.box-audio audio');
+            const btnReverencia = document.getElementById('btn-reverencia');
 
             // Define los desplazamientos de scroll para cada botón
             const scrollOffsets = [400, 400, 400, 400]; // Ajusta los valores según sea necesario
@@ -2280,6 +2287,31 @@
                 });
             });
 
+            // Manejar el botón #btn-reverencia
+            btnReverencia.addEventListener('click', () => {
+                // Pausar todos los audios
+                pauseAllAudios();
+
+                // Activar el btn-bloque-4
+                buttons.forEach(btn => btn.classList.add('inactivo'));
+                document.querySelector('#btn-bloque-4').classList.remove('inactivo');
+
+                // Mostrar el bloque correspondiente
+                bloques.forEach(bloque => bloque.classList.remove('active'));
+                const bloqueActivo = document.getElementById('box-bloque-4');
+                bloqueActivo.classList.add('active');
+
+                // Cambiar clase de `box-menu-opciones`
+                menuOpciones.classList.remove('cyan', 'crema', 'azul', 'gris');
+                menuOpciones.classList.add('gris');
+
+                // Scroll suave hacia una cantidad específica de píxeles
+                window.scrollBy({
+                    top: 1300, // Cantidad específica para btn-reverencia
+                    behavior: 'smooth'
+                });
+            });
+
             // Evitar reproducción simultánea de audios
             audios.forEach(audio => {
                 audio.addEventListener('play', () => {
@@ -2291,6 +2323,8 @@
                 });
             });
         });
+
+
 
     </script>
 
