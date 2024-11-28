@@ -168,7 +168,7 @@ html {
         }
         .box-bajada p{
             color: #DBB972;
-            font: 19px/1.2 'prelomedium';
+            font: 19px/1.3 'prelomedium';
             margin: 0 auto;
             max-width: 450px;
             text-align: center;
@@ -2124,6 +2124,45 @@ ul.playas{
             top: 225px;
         }
 
+        .box-footer{
+            background-size: 100%;
+            padding: 70px 0 20px;
+            position: relative;
+            text-align: center;
+            z-index: 40;
+        }
+            .box-footer img{
+                display: block;
+                margin: 0 auto 50px;
+                max-width: 140px;
+            }
+            .box-footer ul{
+                display: inline-block;
+                list-style: none;
+                max-width: 170px;
+                padding: 0;
+                vertical-align: top;
+            }
+                .box-footer ul li{
+                    margin-bottom: 20px;            
+                }
+                    .box-footer ul li p{
+                        font: 16px / 1.6 'prelobook';
+                        margin: 0 auto;
+                    }
+                    .box-footer ul li h5{
+                        font: 16px / 1.6 'prelobold';
+                        margin: 0 auto;
+                    }
+            span.separador-footer{
+                background-color: #707070;
+                display: inline-block;
+                height: 235px;
+                margin: 0 40px;
+                vertical-align: top;
+                width: 1px;
+            }
+
 
 @media only screen and (max-width: 640px) {    
 
@@ -2143,6 +2182,7 @@ ul.playas{
         display: block;
     }
     .btn-intro{
+        margin-bottom: 20px;
         width: 70%;
     }
     .box-bajada{
@@ -2583,6 +2623,13 @@ ul.playas{
         left: 0;
     }
     
+    .box-footer ul{
+        max-width: 100%;
+        width: 100%;
+    }
+    span.separador-footer{
+       display: none;
+    }
 
 }
 

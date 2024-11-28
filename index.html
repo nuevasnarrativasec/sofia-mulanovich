@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css?v16">
+    <link rel="stylesheet" href="./css/style.css?v17">
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -1414,25 +1414,84 @@
         </div>        
 
 
-        <!--<div class="box-footer">
-            <div class="box-ctn-footer">
-                <img src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/susana-baca/img/logo-comercio.png" alt="el comercio" width="100%">
-                <ul class="creditos">
-                    <li>
+        <div class="box-footer">
+            <img src="https://cdna.elcomercio.pe/resources/dist/elcomercio/images/logo.png" alt="" width="100%">
+            <ul>
+                <li>
+                    <p>
                         Textos:
-                        <span>Ángel Navarro</span>
-                    </li>
-                    <li>
-                        Ilustraciones:
-                        <span>Kiomy Kanashiro</span>
-                    </li>
-                    <li>
-                        Realización:
-                        <span>Nuevas Narrativas El Comercio</span>
-                    </li>
-                </ul>
-            </div>
-        </div>-->       
+                    </p>
+                    <h5>
+                        Christian Cruz Valdivia
+                    </h5>
+                    <h5>
+                        Carlos Lázaro Odria
+                    </h5>
+                </li>
+                <li>
+                    <p>
+                        Fotografía:
+                    </p>
+                    <h5>
+                        Joel Alonso
+                    </h5>
+                </li>                
+            </ul>
+            <span class="separador-footer"></span>
+            <ul>
+                <li>
+                    <p>
+                        Video:
+                    </p>
+                    <h5>
+                        Wendy Vega 
+                    </h5>
+                </li>
+                <li>
+                    <p>
+                        Edición de video: 
+                    </p>
+                    <h5>
+                        Luis Jacobo
+                    </h5>
+                </li>
+                <li>
+                    <p>
+                        Programación:
+                    </p>
+                    <h5>Armando Scargglioni C.</h5>
+                </li>
+                
+            </ul>
+            <span class="separador-footer"></span>
+            <ul>
+                <li>
+                    <p>
+                        Diseño:
+                    </p>
+                    <h5>
+                        Marcelo Hidalgo
+                    </h5>
+                    <h5>
+                        Angela Peña
+                    </h5>
+                </li>
+                <li>
+                    <p>
+                        Edición visual:
+                    </p>
+                    <h5>Angela Peña</h5>
+                </li>
+                <li>
+                    <p>
+                        Producción general:
+                    </p>
+                    <h5>
+                        Gisella Salmón
+                    </h5>
+                </li>
+            </ul>
+        </div>    
 
     </div>
 
@@ -2421,12 +2480,21 @@
                 menuOpciones.classList.remove('cyan', 'crema', 'azul', 'gris');
                 menuOpciones.classList.add('gris');
 
+                // Detectar dispositivo y ajustar desplazamiento
+                let scrollOffset;
+                if (window.innerWidth <= 768) { // Móvil (ancho de pantalla menor o igual a 768px)
+                    scrollOffset = 2300; // Mayor desplazamiento en píxeles
+                } else { // Desktop
+                    scrollOffset = 1300; // Menor desplazamiento en píxeles
+                }
+
                 // Scroll suave hacia una cantidad específica de píxeles
                 window.scrollBy({
-                    top: 1300, // Cantidad específica para btn-reverencia
+                    top: scrollOffset,
                     behavior: 'smooth'
                 });
             });
+
 
             // Evitar reproducción simultánea de audios
             audios.forEach(audio => {
