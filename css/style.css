@@ -347,7 +347,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 9500px;
+            width: 9375px;
         }
         .mar{
             left: -100%;
@@ -725,7 +725,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 5450px;
+            width: 5360px;
         }
     #box-horizontal-1996{
         
@@ -735,7 +735,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 5200px;
+            width: 5120px;
         }
     #box-horizontal-2021{
         
@@ -745,7 +745,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 5400px;
+            width: 5335px;
         }
     #box-horizontal-2024{
         
@@ -2273,19 +2273,19 @@ ul.playas{
         max-width: 300px;
     }
     #box-horizontal-2024 .ctn-box-horizontal{
-        width: 6550px;
+        width: 6480px;
     }
     #box-horizontal-2021 .ctn-box-horizontal{
-        width: 5050px;
+        width: 4955px;
     }
     #box-horizontal-2004 .ctn-box-horizontal{
-        width: 8900px;
+        width: 8830px;
     }
     #box-horizontal-1996 .ctn-box-horizontal{
-        width: 5050px;
+        width: 4970px;
     }
     #box-horizontal-1990 .ctn-box-horizontal{
-        width: 5300px;
+        width: 5245px;
     }
     #box-horizontal-3 .box-contenido{
         /*pointer-events: none;*/
