@@ -2221,7 +2221,35 @@ ul.playas{
         color: #fff;
     }
 
+#player-container{
+    position: absolute;
+    right: 15px;
+    top: 70px;
+    z-index: 10;
+}
+    #player-container #play-pause {
+        border-radius: 30px;
+        cursor: pointer;    
+        height: 25px;
+        width: 20px;
+        padding: 12px 15px;
+        text-indent: -999999px;
+        z-index: 2;
 
+        background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/chakaruwaq-el-ingeniero-del-ultimo-puente-inca-cusco-video-especdis/img/off.png');
+        background-repeat: no-repeat!important;
+        background-position: center;
+        background-size: 16px;
+        background-repeat:no-repeat;
+        background-position:center;
+        background-color: #fadf9e;
+    }
+        .play {
+            background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/chakaruwaq-el-ingeniero-del-ultimo-puente-inca-cusco-video-especdis/img/off.png');
+        }
+        .pause {
+            background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/chakaruwaq-el-ingeniero-del-ultimo-puente-inca-cusco-video-especdis/img/on.png')!important;
+        }
 
 @media only screen and (max-width: 640px) {    
 
