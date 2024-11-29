@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <!--<link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v33">-->
-    <link rel="stylesheet" href="./css/style.css?v28">
+    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v35">
+    <!--<link rel="stylesheet" href="./css/style.css?v28">-->
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
 
@@ -2103,12 +2103,12 @@
 
     <!-- pausa video clips -->
     <script>
-       // Clase para manejar la visibilidad de los videos
         class VideoManager {
             constructor(selector = 'video[data-manage-visibility]') {
                 this.selector = selector;
                 this.observers = new Map();
                 this.currentlyPlayingVideo = null;
+                this.audioTrack = document.getElementById('track'); // Referencia al audio
                 this.init();
             }
 
@@ -2155,6 +2155,11 @@
                 });
 
                 video.addEventListener('play', () => {
+                    if (this.audioTrack && !this.audioTrack.paused) {
+                        this.audioTrack.pause(); // Pausar el audio si está reproduciendo
+                        console.log('Audio pausado debido a la reproducción del video.');
+                    }
+
                     if (this.currentlyPlayingVideo && this.currentlyPlayingVideo !== video) {
                         this.pauseVideo(this.currentlyPlayingVideo);
                     }
@@ -2275,30 +2280,43 @@
         document.addEventListener('DOMContentLoaded', () => {
             window.videoManager = new VideoManager();
         });
-
-
-
-
     </script>
 
     <!-- pausa iframes JWPlayer -->
     <script>
-        // Configuración del IntersectionObserver para pausar iframes cuando salen del viewport
+        // Configuración del IntersectionObserver para manejar la visibilidad de los iframes
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const iframe = $(entry.target).find('iframe');
                 if (!entry.isIntersecting) {
                     const iframeSrc = iframe.attr('src');
-                    iframe.attr('src', iframeSrc); // Recargar iframe
+                    iframe.attr('src', iframeSrc); // Recargar iframe al salir del viewport
                     console.log("Iframe pausado y recargado:", iframeSrc);
                 }
             });
         });
 
         // Observa todos los elementos .box-video
-        $('.box-video').each(function() {
+        $('.box-video').each(function () {
             observer.observe(this);
+
+            // Detectar interacción con el iframe
+            const iframe = $(this).find('iframe');
+            const audioTrack2 = $('#track')[0];
+
+            // Evento para pausar el audio en dispositivos móviles y escritorio
+            const pauseAudioOnInteraction = () => {
+                if (audioTrack2 && !audioTrack2.paused) {
+                    audioTrack2.pause();
+                    console.log('Audio pausado porque el iframe fue interactuado.');
+                }
+            };
+
+            // Escucha eventos táctiles y clics en el iframe
+            iframe.on('click touchstart', pauseAudioOnInteraction);
         });
+
+
     </script>
 
     <!--menú principal -->
