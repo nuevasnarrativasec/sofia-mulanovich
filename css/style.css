@@ -2695,6 +2695,9 @@ ul.playas{
     #approvedMessages{
         text-align: center;
     }
+    #social{
+        left: 0;
+    }
 
 }
 

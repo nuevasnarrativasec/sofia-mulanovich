@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v27">
+    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v28">
     <!--<link rel="stylesheet" href="./css/style.css?v27">-->
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
@@ -1439,10 +1439,10 @@
                             <input type="text" id="distrito" name="distrito" required />
                         </div>               
                         
-                        <div class="box-input-50 box-input-correo">
+                        <!--<div class="box-input-50 box-input-correo">
                             <label for="correo">Correo:</label>
                             <input type="email" id="correo" name="correo" required />
-                        </div>                    
+                        </div> -->                   
                       
                         <button type="submit">Enviar</button>
                     </form> 
@@ -1472,6 +1472,9 @@
                     </li>  
                     <span class="separador-footer"></span>                      
                     <li>
+                        <h6>
+                            Video EC:
+                        </h6> 
                         <h5>
                             Video:
                         </h5>
@@ -1488,7 +1491,7 @@
                             Fotografía:
                         </h5>
                         <p>
-                            Joel Alonso
+                            Joel Alonzo
                         </p>
                     </li>   
                     <span class="separador-footer"></span>   
@@ -2382,7 +2385,7 @@
 
     <!-- envía tu mensaje a Sofía -->
     <script>
-        const API_URL = "https://script.google.com/macros/s/AKfycbxJ4r0klMDLj14VycT-VPGFOcKYnQFelOR__xKMeHm5Hp3PFwXX0kEBtVcmGQc2gDvD9w/exec";
+        const API_URL = "https://script.google.com/macros/s/AKfycbyZAPelnHit3r9pjdYMlRWEjQS4-vPatBWdvGmLJkOXfJtGATF4foV9JEOFD33IF_zy/exec";
 
         // Enviar datos al servidor
         document.getElementById('messageForm').addEventListener('submit', async (e) => {
@@ -2392,13 +2395,12 @@
             const nombre = document.getElementById('nombre').value;
             const edad = document.getElementById('edad').value;
             const distrito = document.getElementById('distrito').value;
-            const correo = document.getElementById('correo').value;
 
             try {
                 const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ mensaje, nombre, edad, distrito, correo })
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ mensaje, nombre, edad, distrito })
                 });
 
                 if (response.ok) {
