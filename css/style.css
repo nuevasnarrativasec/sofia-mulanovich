@@ -347,7 +347,7 @@ p.ctn-texto{
             background-size: contain;
             height: 100%;
             position: relative;
-            width: 9375px;
+            width: 9470px;
         }
         .mar{
             left: -100%;
@@ -652,7 +652,7 @@ p.ctn-texto{
             img.bg-grande-2004-2{
                 display: inline-block;
                 margin: 0 100px;
-                max-width: 475px;
+                max-width: 580px;
                 pointer-events: none;
                 vertical-align: top;
             }
@@ -2313,7 +2313,7 @@ ul.playas{
         width: 4955px;
     }
     #box-horizontal-2004 .ctn-box-horizontal{
-        width: 8830px;
+        width: 8930px;
     }
     #box-horizontal-1996 .ctn-box-horizontal{
         width: 4970px;
