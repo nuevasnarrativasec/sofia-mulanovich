@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v52">
+    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v55">
     <!--<link rel="stylesheet" href="./css/style.css?v30">-->
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
@@ -2481,6 +2481,9 @@
                     const verMasButton = document.getElementById('verMasMensajes'); // Botón para ver más mensajes
                     approvedMessagesDiv.innerHTML = '';
 
+                    // Invertir el orden de los mensajes
+                    const reversedMessages = messages.reverse();
+
                     // Colores de cajas de mensajes
                     const colors = [
                         '#5371ca', '#daa958', '#79a7df', 
@@ -2493,9 +2496,9 @@
 
                     // Función para mostrar mensajes
                     function showMessages() {
-                        const end = Math.min(displayedCount + messagesPerPage, messages.length);
+                        const end = Math.min(displayedCount + messagesPerPage, reversedMessages.length);
                         for (let i = displayedCount; i < end; i++) {
-                            const msg = messages[i];
+                            const msg = reversedMessages[i];
                             const messageDiv = document.createElement('div');
                             messageDiv.style.backgroundColor = colors[i % colors.length]; // Asigna el color cíclico
 
@@ -2527,7 +2530,7 @@
                         displayedCount = end;
 
                         // Ocultar el botón si no hay más mensajes por mostrar
-                        if (displayedCount >= messages.length) {
+                        if (displayedCount >= reversedMessages.length) {
                             verMasButton.style.display = 'none';
                         }
                     }
