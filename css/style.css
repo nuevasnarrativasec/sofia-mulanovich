@@ -1801,8 +1801,10 @@ ul.playas{
             margin-top: 60px;
         }
 
-#trigger-surfer{
+#trigger-surfer{   
     background: #d6fffd;
+    margin-bottom: 0;
+    padding-bottom: 50px;
     position: relative;
     z-index: 10;
 }
@@ -2251,6 +2253,18 @@ ul.playas{
             background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/chakaruwaq-el-ingeniero-del-ultimo-puente-inca-cusco-video-especdis/img/on.png')!important;
         }
 
+    p.bajada-timeline{
+        background: #d6fffd;
+        font: 16px / 1.4 'prelobook';
+        margin: 0 auto 25px;
+        max-width: 380px; 
+        padding: 50px 0 30px;
+        position: relative;
+        text-align: center;
+        z-index: 10;        
+    }    
+
+
 @media only screen and (max-width: 640px) {    
 
     #wst{
@@ -2393,7 +2407,7 @@ ul.playas{
         max-width: auto;
     }
         #iframe5{
-            padding: 150px 0 !important;
+            /*padding: 150px 0 !important;*/
         }
         #iframe6{
             padding: 150px 0 !important;
