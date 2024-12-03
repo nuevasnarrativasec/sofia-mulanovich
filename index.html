@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v55">
+    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/sofia-mulanovich/css/style.css?v56">
     <!--<link rel="stylesheet" href="./css/style.css?v30">-->
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">
 
@@ -2565,7 +2565,7 @@
 
     <!-- menu opciones -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+       document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('#btn-bloque-1, #btn-bloque-2, #btn-bloque-3, #btn-bloque-4');
             const bloques = document.querySelectorAll('.box-bloque-opciones');
             const menuOpciones = document.getElementById('box-menu-opciones');
@@ -2579,6 +2579,28 @@
             const pauseAllAudios = () => {
                 audios.forEach(audio => audio.pause());
             };
+
+            // Mostrar el bloque 4 por defecto
+            const setDefaultActiveBlock = () => {
+                // Pausar todos los audios
+                pauseAllAudios();
+
+                // Activar el botón correspondiente
+                buttons.forEach(btn => btn.classList.add('inactivo'));
+                document.querySelector('#btn-bloque-4').classList.remove('inactivo');
+
+                // Mostrar el bloque correspondiente
+                bloques.forEach(bloque => bloque.classList.remove('active'));
+                const bloqueActivo = document.getElementById('box-bloque-4');
+                bloqueActivo.classList.add('active');
+
+                // Aplicar la clase correspondiente al menú
+                menuOpciones.classList.remove('cyan', 'crema', 'azul', 'gris');
+                menuOpciones.classList.add('gris');
+            };
+
+            // Llama a la función para establecer el bloque 4 como activo por defecto
+            setDefaultActiveBlock();
 
             // Manejar los botones
             buttons.forEach((button, index) => {
@@ -2648,7 +2670,6 @@
                 });
             });
 
-
             // Evitar reproducción simultánea de audios
             audios.forEach(audio => {
                 audio.addEventListener('play', () => {
@@ -2660,6 +2681,7 @@
                 });
             });
         });
+
 
 
 
